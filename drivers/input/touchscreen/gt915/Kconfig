@@ -1,0 +1,81 @@
+#
+# Goodix GT9xx Touchscreen driver
+#
+
+menuconfig ZTEMT_TOUCHSCREEN_GT9XX
+	bool "ZTEMT_TOUCHSCREEN_GT9XX"
+	help
+	  Say Y here, and a list of supported touchscreens will be displayed.
+	  This option doesn't affect the kernel.
+
+	  If unsure, say Y.
+
+if ZTEMT_TOUCHSCREEN_GT9XX
+
+config ZTEMT_GT9XX_TOUCHSCREEN_DRIVER
+	tristate "Goodix GT9xx touchpanel driver"
+	depends on ZTEMT_TOUCHSCREEN_GT9XX
+	default n
+	help
+	  This is the main file for touchpanel driver for Goodix GT9xx
+	  touchscreens.
+
+	  Say Y here if you have a Goodix GT9xx touchscreen connected
+	  to your system.
+
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called gt9xx_update.
+
+config ZTEMT_GT9XX_TOUCHSCREEN_UPDATE
+	tristate "Goodix GT9xx touchpanel auto update support"
+	depends on ZTEMT_GT9XX_TOUCHSCREEN_DRIVER
+	default n
+	help
+	  This enables support for firmware update for Goodix GT9xx
+	  touchscreens.
+
+	  Say Y here if you have a Goodix GT9xx touchscreen connected
+	  to your system.
+
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called gt9xx_update.
+
+config ZTEMT_GT9XX_TOUCHSCREEN_DEBUG
+	tristate "Goodix GT9xx Tools for debuging"
+	depends on ZTEMT_GT9XX_TOUCHSCREEN_DRIVER
+	default n
+	help
+	  This is application debug interface support for Goodix GT9xx
+	  touchscreens.
+
+	  Say Y here if you want to have a Android app debug interface
+	  to your system.
+
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called gt9xx_update.
+
+config ZTEMT_GT9XX_TOUCHSCREEN_TEST
+       tristate "Goodix GT9xx Tools for testing"
+       depends on ZTEMT_GT9XX_TOUCHSCREEN_DRIVER
+       default n
+       help
+         This is application test interface support for Goodix GT9xx
+         touchscreens.
+
+         Say Y here if you want to have a Android app debug interface
+         to your system.
+
+         If unsure, say N.
+
+         To compile this driver as a module, choose M here: the
+         module will be called gt9xx_update.
+
+
+endif
+

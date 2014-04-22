@@ -1,0 +1,101 @@
+menuconfig CYPRSS_TOUCHSCREEN_TMA463
+	bool "CYPRSS_TOUCHSCREEN_TMA463"
+	help
+	  Say Y here, and a list of supported touchscreens will be displayed.
+	  This option doesn't affect the kernel.
+
+	  If unsure, say Y.
+
+if CYPRSS_TOUCHSCREEN_TMA463
+
+choice
+	prompt "Cypress TTSP Screen Size of the Module"
+
+config CYTTSP4_5P0_INCH_OTG_GW
+	bool "5.0 inch OTG TP"
+	help
+	  This option enables support Cypress TTSP 5.0 inch TP.
+	
+config CYTTSP4_4P7_INCH_OTG_GW
+	bool "4.7 inch OTG TP"
+	help
+	  This option enables support Cypress TTSP 4.7 inch TP.	
+endchoice
+
+config CYPRESS_CYTTSP4_BUS
+	bool "Cypress TTSP core bus"
+	default n
+	help
+	  This option enables support Cypress TTSP core bus.
+	  This support is needed for various device and drivers
+	  using Cypress TrueTouch(TM) Standard Product
+	  protocol.
+
+config TOUCHSCREEN_CYPRESS_CYTTSP4
+	tristate "Cypress TrueTouch Gen4 Touchscreen Driver"
+	default n
+	depends on CYPRESS_CYTTSP4_BUS
+
+	help
+	  Say Y here if you have a Cypress Gen4 touchscreen.
+
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose M here.
+
+config TOUCHSCREEN_CYPRESS_CYTTSP4_DEBUG
+	bool "Enable debug output"
+	depends on TOUCHSCREEN_CYPRESS_CYTTSP4
+	default n
+
+config TOUCHSCREEN_CYPRESS_CYTTSP4_VDEBUG
+	bool "Enable verbose debug output"
+	depends on TOUCHSCREEN_CYPRESS_CYTTSP4_DEBUG
+	default n
+
+config TOUCHSCREEN_CYPRESS_CYTTSP4_I2C
+	tristate "Cypress TrueTouch Gen4 I2C"
+	depends on TOUCHSCREEN_CYPRESS_CYTTSP4
+	default n
+
+config TOUCHSCREEN_CYPRESS_CYTTSP4_SPI
+	tristate "Cypress TrueTouch Gen4 SPI"
+	depends on TOUCHSCREEN_CYPRESS_CYTTSP4
+	default n
+
+config TOUCHSCREEN_CYPRESS_CYTTSP4_MT_A
+	tristate "Cypress TrueTouch Gen4 MultiTouch Protocol A"
+	depends on TOUCHSCREEN_CYPRESS_CYTTSP4
+	default n
+
+config TOUCHSCREEN_CYPRESS_CYTTSP4_MT_B
+	tristate "Cypress TrueTouch Gen4 MultiTouch Protocol B"
+	depends on TOUCHSCREEN_CYPRESS_CYTTSP4
+	default n
+
+config TOUCHSCREEN_CYPRESS_CYTTSP4_BUTTON
+	tristate "Cypress TrueTouch Gen4 MultiTouch CapSense Button"
+	depends on TOUCHSCREEN_CYPRESS_CYTTSP4
+	default n
+
+config TOUCHSCREEN_CYPRESS_CYTTSP4_DEVICE_ACCESS
+	tristate "Cypress TrueTouch Gen4 MultiTouch Device Access"
+	depends on TOUCHSCREEN_CYPRESS_CYTTSP4
+	default n
+
+config TOUCHSCREEN_CYPRESS_CYTTSP4_LOADER
+	tristate "Cypress TrueTouch Gen4 MultiTouch Loader"
+	depends on TOUCHSCREEN_CYPRESS_CYTTSP4
+	default n
+
+config TOUCHSCREEN_CYPRESS_CYTTSP4_DEBUG_MODULE
+	tristate "Cypress TrueTouch Gen4 MultiTouch Debug Module"
+	depends on TOUCHSCREEN_CYPRESS_CYTTSP4
+	default n
+
+config TOUCHSCREEN_CYPRESS_CYTTSP4_AUTO_LOAD_TOUCH_PARAMS
+	tristate "Cypress TrueTouch Gen4 MultiTouch auto load touch params"
+	depends on TOUCHSCREEN_CYPRESS_CYTTSP4
+	default n	
+
+endif

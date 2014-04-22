@@ -1,0 +1,2458 @@
+commit 683ace5c8472e087dc85bfb336ab83c48e10ead4
+Merge: fc3de9a bce0767
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Wed Feb 26 06:14:04 2014 -0800
+
+    Merge "Merge ef500a89616f2d562538f0bf09d82f23a495fbd2 on remote branch"
+
+commit bce0767f1ef286a59dc08f7f00923ff52d9c05a6
+Merge: fc3de9a ef500a8
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Wed Feb 26 03:42:48 2014 -0700
+
+    Merge ef500a89616f2d562538f0bf09d82f23a495fbd2 on remote branch
+    
+    Change-Id: I62875ee7757a6684d10753f9d36633161a59a4dc
+
+commit ef500a89616f2d562538f0bf09d82f23a495fbd2
+Merge: cfc402d 818a2da
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Mon Feb 24 15:10:02 2014 -0800
+
+    Merge "crypto: msm: ota: fix possible buffer overflow issue"
+
+commit cfc402da3883c3c7d17f3b399c9e23e1451fd526
+Merge: ac3bba4 8492b12
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Mon Feb 24 15:09:45 2014 -0800
+
+    Merge "misc: qfpfuse: Fix overflow condition"
+
+commit 818a2da2078b806e4b4559aa4c95aaae9e7f2d3b
+Author: Venkatesh Yadav Abbarapu <quicvenkat@codeaurora.org>
+Date:   Mon Feb 17 17:45:32 2014 +0530
+
+    crypto: msm: ota: fix possible buffer overflow issue
+    
+    This patch replaces snprintf with scnprintf to prevent
+    possible buffer overflow issues
+    
+    CRs-Fixed: 562347
+    
+    Change-Id: I56aebd24557dccc547ff86cb8853ace0602b6e50
+    Acked-by: Radhakrishna Popuri <c_rpopur@qti.qualcomm.com>
+    Signed-off-by: Venkatesh Yadav Abbarapu <quicvenkat@codeaurora.org>
+
+commit 8492b12220d230cce5ba9dec71d82c56dc62566e
+Author: Venkatesh Yadav Abbarapu <quicvenkat@codeaurora.org>
+Date:   Mon Feb 17 16:48:33 2014 +0530
+
+    misc: qfpfuse: Fix overflow condition
+    
+    Fix potential integer overflow for ioctl command to avoid incorrect
+    buffer allocation. Use the stack for data buffering to avoid the
+    small buffer allocation for improved performance. Increase the fuse
+    blow timeout in the driver to cover all QFPROM implementations.
+    
+    CRs-Fixed: 550574,550575
+    
+    Change-Id: Iee3cc1d38aa5dbf8ef693a43a0ca716fc8724c62
+    Acked-by: Radhakrishna Popuri <c_rpopur@qti.qualcomm.com>
+    Signed-off-by: Venkatesh Yadav Abbarapu <quicvenkat@codeaurora.org>
+
+commit ac3bba4e95c6377a8f3ced42403243c13dd22821
+Merge: e88c406 9afb4a6
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Sat Feb 22 02:18:15 2014 -0800
+
+    Merge "arm: mach-msm: fix integer overflow in DFE_IOCTL_COMMAND"
+
+commit 9afb4a61c957c09529e6c6b63ff48ba9285d2e36
+Author: Venkatesh Yadav Abbarapu <quicvenkat@codeaurora.org>
+Date:   Mon Nov 11 18:02:27 2013 +0530
+
+    arm: mach-msm: fix integer overflow in DFE_IOCTL_COMMAND
+    
+    Added error checks for upper limit of param.num in
+    DFE_IOCTL_COMMAND
+    
+    Change-Id: I0143813d38ec7a5dfa7a8307b075daf7d4a4d101
+    Acked-by: John Nicholas <jnichola@qti.qualcomm.com>
+    Signed-off-by: Venkatesh Yadav Abbarapu <quicvenkat@codeaurora.org>
+
+commit e88c406bfdbc00861e9a11fa08166f1f26ac377a
+Merge: f128f5c 6427e5c
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Thu Feb 20 23:55:14 2014 -0800
+
+    Merge "msm: msm_bus: Don't divide RPM BW requests"
+
+commit f128f5cd262dbbcd37c3cb6b0a1dc75225d527cd
+Merge: b4c91a7 87d24ee
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Thu Feb 20 10:19:19 2014 -0800
+
+    Merge "msm: camera: Cleanup msm generic buf queue handling"
+
+commit b4c91a72b2908f1ef04da8fcf491eecfb267ea58
+Merge: e53d943 15f0338
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Thu Feb 20 10:19:18 2014 -0800
+
+    Merge "msm: camera2: cpp: Release vb2 buffer in cpp driver on error"
+
+commit e53d943e914a99120fa40fa7381c521592d3da69
+Merge: 6d58e55 f8a5d49
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Thu Feb 20 00:14:22 2014 -0800
+
+    Merge "ARM: dts: msm: Change the capless mode for 8226 qrd"
+
+commit 6427e5c4a16773792164bb3a8817e4c5f1d2b2b9
+Author: Girish Mahadevan <girishm@codeaurora.org>
+Date:   Mon Feb 3 18:20:48 2014 -0700
+
+    msm: msm_bus: Don't divide RPM BW requests
+    
+    When sending bandwidth requests to slave don't divide the request by
+    the number of ports as this is done at the RPM driver.
+    
+    CRs-Fixed: 611965
+    Change-Id: Ie6870b66d1621677d94e4441136aed89bbdb6595
+    Signed-off-by: Girish Mahadevan <girishm@codeaurora.org>
+
+commit fc3de9a1dad2cbc55fa23cd82148d8d7eb27185f
+Merge: a3bb528 4be012f
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Wed Feb 19 06:03:31 2014 -0800
+
+    Merge "Merge 05f4115eec3dac2f8c7e9599fee1bd7833245083 on remote branch"
+
+commit 4be012faa8e6e4d9b64750d487fe6441ccdf1a43
+Merge: a3bb528 05f4115
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Wed Feb 19 04:44:57 2014 -0700
+
+    Merge 05f4115eec3dac2f8c7e9599fee1bd7833245083 on remote branch
+    
+    Change-Id: I559e64146398c6183c3a237b26b401403db341dc
+
+commit f8a5d49d7f6ecfe450f6ecb0e5e07d0ae97e4a62
+Author: Kunlei Zhang <quic_kunleiz@codeaurora.org>
+Date:   Tue Jan 21 10:41:04 2014 +0800
+
+    ARM: dts: msm: Change the capless mode for 8226 qrd
+    
+    msm8226-qrd.dtsi is included by many 8226 or 8926 dts,
+    but not all the boards have the external cap for micbias1.
+    For example, 8926 qrd board doesn't have the cap.
+    So remove the external cap for micbias1 in this dtsi
+    and add it into the specific board dts who uses the cap.
+    
+    CRs-fixed: 572412
+    
+    Change-Id: I196657fabbab46ff6ff8d36b25554da50fab9f16
+    
+    Signed-off-by: Kunlei Zhang <quic_kunleiz@codeaurora.org>
+
+commit 6d58e551b7510a804923b5370ca21aaf4b57dcbd
+Merge: 05f4115 cce150a
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Feb 18 16:14:54 2014 -0800
+
+    Merge "[media] media: Init the reserved fields of struct media_link_desc"
+
+commit cce150abb169fb4672432be1978777d7d3215905
+Author: Deva Ramasubramanian <dramasub@codeaurora.org>
+Date:   Fri Jan 24 12:38:37 2014 -0800
+
+    [media] media: Init the reserved fields of struct media_link_desc
+    
+    struct media_link_desc is copy_to_user'ed as the return value of
+    MEDIA_IOC_ENUM_LINKS. When copying, the driver is omitting to initialise
+    the reserved fields.  This commit fixes that by initialising the
+    reserved fields to 0.
+    
+    CRs-Fixed: 570757
+    Change-Id: I230e2666c0845cc36399518a0f2c94db664382d1
+    Signed-off-by: Deva Ramasubramanian <dramasub@codeaurora.org>
+
+commit 05f4115eec3dac2f8c7e9599fee1bd7833245083
+Merge: 79334df beb3d0f
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Mon Feb 17 02:27:11 2014 -0800
+
+    Merge "mmc: block: check for NULL pointer before dereferencing"
+
+commit beb3d0fb29b66ab711d67924087cd463a7dd6d40
+Author: Asutosh Das <asutoshd@codeaurora.org>
+Date:   Fri Jan 24 11:36:07 2014 +0530
+
+    mmc: block: check for NULL pointer before dereferencing
+    
+    mmc block data can be NULL. Hence, check for NULL before
+    dereferencing md.
+    
+    CRs-Fixed: 562259
+    Change-Id: I0182c216ec73347cdd2ea464f593839fffd242a9
+    Signed-off-by: Asutosh Das <asutoshd@codeaurora.org>
+
+commit 79334df209a55e19d3e2ffa2c1e31dc8023d9530
+Merge: 00104ec 4a5198c
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Thu Feb 13 09:24:28 2014 -0800
+
+    Merge "msm: reap unused audio files"
+
+commit a3bb52813d8fff1e6a1bf0645536647a6751b7dd
+Merge: c9547da 6d2b396
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Wed Feb 12 07:09:58 2014 -0800
+
+    Merge "Merge commit '00104ecb0cd8d7a6cd9215cb2d61c9521442d605' into HEAD."
+
+commit 6d2b396457521a9bb5a9c3000db876a3301ac538
+Merge: c9547da 00104ec
+Author: Abhishek Ranjan <aranja@codeaurora.org>
+Date:   Wed Feb 12 19:55:53 2014 +0530
+
+    Merge commit '00104ecb0cd8d7a6cd9215cb2d61c9521442d605' into HEAD.
+    
+    Conflicts:
+    	arch/arm/boot/dts/dsi-panel-ssd2080m-720p-video.dtsi
+    
+    Change-Id: I0b2f9bbf97b3f488d8eb31264c57816ee6f6543e
+    
+    Signed-off-by: Abhishek Ranjan <aranja@codeaurora.org>
+
+commit 00104ecb0cd8d7a6cd9215cb2d61c9521442d605
+Merge: f56b86f d5eea97
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Feb 11 08:16:51 2014 -0800
+
+    Merge "radio: iris: Prevent loss of data"
+
+commit f56b86f074dce7247153e7feafc8918a92ba184f
+Merge: f8d0161 84d5181
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Feb 11 06:09:04 2014 -0800
+
+    Merge "msm: ultrasound: add verifications of some input parameters"
+
+commit f8d016183c797daa64bbea8216e9cbb2bb1abf87
+Merge: ea0f093 e19d6599
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Feb 11 00:43:26 2014 -0800
+
+    Merge "fbcmap: prevent memory overflow"
+
+commit ea0f0935ad2c2996c7e7b11fa069d92834e9702a
+Merge: 59765aa ce58ba2
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Feb 11 00:43:24 2014 -0800
+
+    Merge "msm: camera: Fix various small issues in Actuator driver"
+
+commit 59765aa79b52f6f37768b13bc89ce68084284605
+Merge: 2e8eaef 508b034
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Mon Feb 10 21:48:04 2014 -0800
+
+    Merge "msm: vidc: Check input arguments correctly"
+
+commit 2e8eaef16ee8ea6bfe7a60d9232dc26630185238
+Merge: 3a4ee72 6d7cf19
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Mon Feb 10 21:48:01 2014 -0800
+
+    Merge "msm: usbaudio: Add check for NULL before dereferencing"
+
+commit 84d51813b2365fbb14666fde0671709604660fc8
+Author: Baruch Eruchimovitch <baruche@codeaurora.org>
+Date:   Mon Oct 14 15:49:41 2013 +0300
+
+    msm: ultrasound: add verifications of some input parameters
+    
+    Some security vulnerabilities were found.
+    To fix them, additional verifications of some input parameters
+    are required.
+    
+    CRs-Fixed: 554575, 554560, 555030
+    Change-Id: Ie87a433bcda89c3e462cfd511c168e8306056020
+    Signed-off-by: Baruch Eruchimovitch <baruche@codeaurora.org>
+
+commit d5eea97f8dfff60f656885f9b8d3c172f39d6074
+Author: Ayaz Ahmad <aahmad@codeaurora.org>
+Date:   Wed Nov 6 16:38:20 2013 +0530
+
+    radio: iris: Prevent loss of data
+    
+    Down casting a variable may lead to loss
+    of data, other various kind of subtle errors.
+    
+    Change-Id: I4c9ce24393a0b6cb1b006cbb3801d6c9e360f70f
+    CRs-Fixed: 569313
+    Signed-off-by: Ayaz Ahmad <aahmad@codeaurora.org>
+
+commit 6d7cf19c4cac9df142cf6e335cf915117420f558
+Author: Mayank Rana <mrana@codeaurora.org>
+Date:   Fri Oct 18 14:46:36 2013 +0530
+
+    msm: usbaudio: Add check for NULL before dereferencing
+    
+    kzalloc() and usb_ifnum_to_if() both APIs can return NULL. Current
+    code is not checking return value and derefencing which may crash
+    device if it is set to NULL. Fix this by checking return value
+    against NULL and handling the same.
+    
+    CRs-Fixed: 562273
+    Change-Id: Idfae0baf5fdedd658a8bb04e5ad95ff5fb4472d1
+    Signed-off-by: Mayank Rana <mrana@codeaurora.org>
+    Signed-off-by: Saket Saurabh <ssaurabh@codeaurora.org>
+
+commit e19d65997578fca596e17aacef7e56fc6bd66984
+Author: Shalabh Jain <shalabhj@codeaurora.org>
+Date:   Tue Nov 12 15:10:44 2013 -0800
+
+    fbcmap: prevent memory overflow
+    
+    Add bounds check before copying data to prevent
+    buffer overflow.
+    
+    Change-Id: I47b9685b1ab13c4863fb6db62bbb9497a00b36da
+    Signed-off-by: Shalabh Jain <shalabhj@codeaurora.org>
+
+commit 508b0346d4d75e6bf4686eae6bdaafbd8f0ae406
+Author: Deva Ramasubramanian <dramasub@codeaurora.org>
+Date:   Mon Nov 4 13:31:33 2013 -0800
+
+    msm: vidc: Check input arguments correctly
+    
+    This commit fixes some minor bugs in which input arguments or malloc
+    return values were being insufficiently validated.
+    
+    Change-Id: Ib0b3d2ded29384b49ec61a5fc275d3aca1fd6e14
+    Signed-off-by: Deva Ramasubramanian <dramasub@codeaurora.org>
+
+commit ce58ba2ab6b4ef346f7f273905395d4eb046669f
+Author: Hariram Purushothaman <hpurus@codeaurora.org>
+Date:   Wed Jul 24 10:42:21 2013 -0700
+
+    msm: camera: Fix various small issues in Actuator driver
+    
+    Bound check and validate userspace parameters direction,
+    number of steps and direction sign. Also fix possible
+    memory leak in certain error cases.
+    
+    CRs-Fixed: 511349
+    Change-Id: Icaa324468574494fb40f2de78e522090806744cb
+    Signed-off-by: Hariram Purushothaman <hpurus@codeaurora.org>
+
+commit 3a4ee7227e27f1a7d3fa8d43434811af3f6ee68d
+Merge: 5c32d70 d963e05
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Mon Feb 10 04:27:36 2014 -0800
+
+    Merge "msm: qdsp6v2: memset stack buffer allocation."
+
+commit 5c32d709b16ad8fd2defe3e3e9ea1da061dc1533
+Merge: 9d30249 52738b5
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Mon Feb 10 02:00:49 2014 -0800
+
+    Merge "Fix a few incorrectly checked [io_]remap_pfn_range() calls"
+
+commit 9d30249266b8766930d4811d22f7fbe141c3d86f
+Merge: 7359145 51597c5
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Sun Feb 9 21:57:18 2014 -0800
+
+    Merge "uio: provide vm access to UIO_MEM_PHYS maps"
+
+commit 52738b5bdac4df494ec30000ab2233f1a1ca4f96
+Author: Linus Torvalds <torvalds@linux-foundation.org>
+Date:   Tue Jan 28 09:01:19 2014 +0530
+
+    Fix a few incorrectly checked [io_]remap_pfn_range() calls
+    
+    Nico Golde reports a few straggling uses of [io_]remap_pfn_range() that
+    really should use the vm_iomap_memory() helper.  This trivially converts
+    two of them to the helper, and comments about why the third one really
+    needs to continue to use remap_pfn_range(), and adds the missing size
+    check.
+    
+    CRs-Fixed: 570735
+    Change-Id: I927a67ea80fea5ed706749ead9defb1e72633952
+    Reported-by: Nico Golde <nico@ngolde.de>
+    Cc: stable@kernel.org
+    Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org.
+    Git-commit: 7314e613d5ff9f0934f7a0f74ed7973b903315d1
+    Git-repo: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git
+    [pratibha@codeaurora.org:resolve trivial merge conflicts]
+    Signed-off-by: Pratibhasagar V <pratibha@codeaurora.org>
+
+commit 7359145707aece1eb7eb776d81dbb78da0cdb2ce
+Merge: 6fb6bda 112bfff
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Sun Feb 9 01:48:12 2014 -0800
+
+    Merge "diag: dci: Index DCI client table by client id"
+
+commit 6fb6bdaa5570836dd8ba05aefb7aa732825d02c8
+Merge: 0de304a b3a31320
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Sat Feb 8 09:18:12 2014 -0800
+
+    Merge "ASoC: msm: Add Buffer overflow check"
+
+commit 51597c5ff3545a4f49db64702ddb13c5d05318a4
+Author: Uwe Kleine-König <u.kleine-koenig@pengutronix.de>
+Date:   Wed Aug 7 13:02:53 2013 +0200
+
+    uio: provide vm access to UIO_MEM_PHYS maps
+    
+    This makes it possible to let gdb access mappings of the process that is
+    being debugged.
+    
+    uio_mmap_logical was moved and uio_vm_ops renamed to group related code
+    and differentiate to new stuff.
+    
+    CRs-Fixed: 570735
+    Change-Id: I8a5ff343727cc58fedfeb73f3466cc9a7f153e84
+    Signed-off-by: Uwe Kleine-König <u.kleine-koenig@pengutronix.de>
+    Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+    Git-commit: 7294151d0592e0ff48c61fca9fd7c93d613134da
+    Git-repo: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git
+    Signed-off-by: Pratibhasagar V <pratibha@codeaurora.org>
+
+commit 0de304a750678b37f0495f03252f6c8752b6f4c0
+Merge: 9740a36 ab8afab
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Feb 7 05:35:10 2014 -0800
+
+    Merge "qseecom: Copy userspace buffer into kernel space before dereferencing"
+
+commit 9740a36e0705c1c155409a57a967cb31a7ab9172
+Merge: 01ccaa3 c8d2ddf
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Feb 7 05:35:08 2014 -0800
+
+    Merge "qseecom: Add checks for user space buffer pointers"
+
+commit 01ccaa3811793ab274d72d350c0db0caaab8562e
+Merge: 1d0fc09 617a5ff
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Feb 7 05:35:06 2014 -0800
+
+    Merge "qseecom: Remove debug  messages"
+
+commit 1d0fc09984d06b053bcaefdf0f2f7c1e166545c5
+Merge: 51e43e5 47c8f77
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Feb 7 05:35:05 2014 -0800
+
+    Merge "thermal: qpnp-adc-tm: Fix format specifier in snprintf"
+
+commit 51e43e52eace98e9bf5f0854e69b8074478a8745
+Merge: 2953502 4d84fa9
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Feb 7 05:35:02 2014 -0800
+
+    Merge "msm: ADSPRPC: Add checks for erroneous values"
+
+commit 29535029fc934c823ef9b3ad2c9037d2d053316b
+Merge: f547d29 c15ffbe
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Feb 7 05:35:00 2014 -0800
+
+    Merge "msm: audio: initialize the structure before sending to user space"
+
+commit f547d294081197b738d3bd8ee2db1b9e52d5e9ed
+Merge: c077b58 4821d6f
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Feb 7 03:17:41 2014 -0800
+
+    Merge "msm: kgsl: Fix mem leak when page allocation fails"
+
+commit c077b58d4802a25aeb24687b642c5604ff623542
+Merge: 01c8677 7598d2e
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Feb 7 03:17:40 2014 -0800
+
+    Merge "msm: camera: prevent invalid access through mmap"
+
+commit 01c86771274b38ceb3aca5bca7bc89637b5989b8
+Merge: 8251dd9 2d1126b
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Feb 7 03:17:38 2014 -0800
+
+    Merge "msm: platform: qpnp-clkdiv: fix potential null pointer dereference"
+
+commit b3a31320c332401ea60f1a7c9d1740cf464fe99c
+Author: Mohammad Johny Shaik <mjshai@codeaurora.org>
+Date:   Thu Jan 2 14:32:12 2014 +0530
+
+    ASoC: msm: Add Buffer overflow check
+    
+    The overflow check is required to ensure that user space data
+    in kernel may not go beyond buffer boundary.
+    
+    Change-Id: I7d94a209c0b8818bfb9c65f8c13a5f5e36c49e2d
+    CRs-Fixed: 563086
+    Signed-off-by: Mohammad Johny Shaik <mjshai@codeaurora.org>
+
+commit 8251dd9d1fd37e8e31a89761b10285f8b6adf507
+Merge: 7136ff0 e1ff1b9
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Feb 7 01:17:37 2014 -0800
+
+    Merge "tspp: Protect against buffer overflow"
+
+commit 7136ff0072177ddf96ee01f35c526bbf96cf8e24
+Merge: 0dbbb33 90461a8
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Feb 7 01:17:34 2014 -0800
+
+    Merge "gpu: ion: Use list_for_each_safe on error path."
+
+commit 0dbbb338c3bfb88102d6de3923688895ff32eb7b
+Merge: eb8e944 e56f81a
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Feb 7 01:17:32 2014 -0800
+
+    Merge "msm: mdss: Avoid variable overloading"
+
+commit eb8e94413d146b62efbf27de1b3eac4804b0e8b0
+Merge: 859bde8 9cdd2d1
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Feb 7 01:17:30 2014 -0800
+
+    Merge "radio: tavarua: Added NULL checks for input arguments."
+
+commit 859bde8b0401b7ad64f5c74542482f3760fefe32
+Merge: 6bbade4 a62aced
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Feb 7 01:17:29 2014 -0800
+
+    Merge "msm: mdss: hdmi: Security check for EDID 3D data parsing"
+
+commit 6bbade4171a45285d867a88935ac2fd081ba34f5
+Merge: a764a30 79722d3
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Feb 7 01:17:27 2014 -0800
+
+    Merge "msm: kgsl: Protect against a potential overflow in kgsl_sg_alloc"
+
+commit a764a3028cc08dc2f1ee86941daff1e86dbb89fc
+Merge: 8d08652 183d2cf
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Thu Feb 6 22:58:08 2014 -0800
+
+    Merge "msm: qdsp6v2: Deleting kernel driver from arch/arm/mach-msm"
+
+commit 8d08652e90d869e87e1b4778ef22d2305fc95aab
+Merge: 8ce1c75 712d352
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Thu Feb 6 22:58:07 2014 -0800
+
+    Merge "msm: qdsp6v2: Deleting kernel driver from arch/arm/mach-msm/qdsp6v2"
+
+commit 4821d6f72b9a4fa9e4b11c41303c510f1d9c8d2e
+Author: Hareesh Gundu <hareeshg@codeaurora.org>
+Date:   Fri Jan 3 11:56:44 2014 +0530
+
+    msm: kgsl: Fix mem leak when page allocation fails
+    
+    Page allocation may fail during OOM condition. Update
+    sglen and size to correct value (allocated) so that
+    they get freed in kgsl_sharedmem_free().
+    
+    Change-Id: I1aa0ca77bb767523dfcf0f6cc3a21eac2b6b80e4
+    Signed-off-by: Hareesh Gundu <hareeshg@codeaurora.org>
+
+commit ab8afab55dd8364fd7709fb979517ea0d4285884
+Author: Hariprasad Dhalinarasimha <hnamgund@codeaurora.org>
+Date:   Fri Sep 27 18:38:53 2013 -0700
+
+    qseecom: Copy userspace buffer into kernel space before dereferencing
+    
+    ION memory is used for user space to kernel space data passing.
+    This is directly accessible in kernel. But, if the IOCTL is called
+    from user space without using User space library, then data might
+    be pointing to some other memory location, in which case, it would
+    not be possible to dereference this location in kernel & hence it
+    would be accessing invalid memory.
+    
+    Change-Id: Ic50c76ee8b2a696dbb786fce3a68cdc782e15268
+    Signed-off-by: Hariprasad Dhalinarasimha <hnamgund@codeaurora.org>
+
+commit c8d2ddfb895448e8dd6ececdd99c6d7a04abf2ac
+Author: Zhen Kong <zkong@codeaurora.org>
+Date:   Mon Nov 25 13:05:35 2013 -0800
+
+    qseecom: Add checks for user space buffer pointers
+    
+    Validate pointers send from user space and pointers
+    embedded within the mesasge sent from user space.
+    
+    Change-Id: I1be54924ef3d301908af6e8d4e6506f2aa7f6428
+    Signed-off-by: Mona Hossain <mhossain@codeaurora.org>
+    Signed-off-by: Zhen Kong <zkong@codeaurora.org>
+
+commit 2d1126b70cf88e15e641ebb4551d1ed957c392d5
+Author: David Collins <collinsd@codeaurora.org>
+Date:   Tue Dec 10 13:59:52 2013 -0800
+
+    msm: platform: qpnp-clkdiv: fix potential null pointer dereference
+    
+    Add a return statement in the spmi resource null check in
+    qpnp_clkdiv_probe().  This is needed in order to avoid
+    dereferencing a null pointer in a subsequent statement.
+    
+    Change-Id: Iaf5d5797016c96a136e93c8e5837f7f8f31d1e47
+    CRs-Fixed: 563655
+    Signed-off-by: David Collins <collinsd@codeaurora.org>
+
+commit e1ff1b99c5d7e60226c3026b0f90a9c7d67032fe
+Author: Hamad Kadmany <hkadmany@codeaurora.org>
+Date:   Sun Nov 17 11:31:01 2013 +0200
+
+    tspp: Protect against buffer overflow
+    
+    Change filter->priority to unsigned int. Since it was defined as integer,
+    it may have had negative value and cause accessing an array outside
+    of its region
+    
+    CRs-Fixed: 561802, 561825
+    Change-Id: Ie72aa09b07e79b0b67081b74e3b2057de30f03d0
+    Signed-off-by: Hamad Kadmany <hkadmany@codeaurora.org>
+
+commit 617a5ff53e48e2c6367e8268aa7e0f0edf7ba9d8
+Author: Mona Hossain <mhossain@codeaurora.org>
+Date:   Thu Oct 3 13:58:45 2013 -0700
+
+    qseecom: Remove debug  messages
+    
+    Remove unnecessary debug  messages.
+    
+    Change-Id: Ida80fbc1376f15753f8329c44550b14d8f4de163
+    Signed-off-by: Mona Hossain <mhossain@codeaurora.org>
+
+commit 47c8f777acfe53d0a07292fc5b6498b2ff24a5d7
+Author: Dipen Parmar <dipenp@codeaurora.org>
+Date:   Fri Oct 18 15:53:36 2013 +0530
+
+    thermal: qpnp-adc-tm: Fix format specifier in snprintf
+    
+    Add format specifier in snprintf to avoid security
+    vulnerability issues.
+    
+    Change-Id: I6ea67633348341267e0646912a6b428709410c78
+    Signed-off-by: Dipen Parmar <dipenp@codeaurora.org>
+
+commit 90461a807a176c0783a4f5ceb165b3f74a5608e6
+Author: Laura Abbott <lauraa@codeaurora.org>
+Date:   Thu Nov 14 07:24:29 2013 -0800
+
+    gpu: ion: Use list_for_each_safe on error path.
+    
+    On an error, the list of pages is walked and destroyed. Since the list
+    is being destroyed, use list_for_each_safe to avoid list corruption.
+    
+    Change-Id: Ia397a11d2d890b3458745820c79df2adaa088ade
+    CRs-Fixed: 565183
+    Signed-off-by: Laura Abbott <lauraa@codeaurora.org>
+
+commit 4d84fa9eda4cc7ea7b1e734451d3d559229ec301
+Author: Mitchel Humpherys <mitchelh@codeaurora.org>
+Date:   Fri Oct 25 12:05:47 2013 -0700
+
+    msm: ADSPRPC: Add checks for erroneous values
+    
+    Check for invalid parameters passed in user invocation
+    and validate the return values using appropriate macros.
+    
+    Change-Id: If529873d025ac0c13725efbedda5a58fae327722
+    Acked-by: Sathish Ambley <sambley@qti.qualcomm.com>
+    Signed-off-by: Mitchel Humpherys <mitchelh@codeaurora.org>
+
+commit c15ffbe6052159f9296bef0ff8425f980e95f976
+Author: Fred Oh <fred@codeaurora.org>
+Date:   Mon Sep 30 11:47:33 2013 -0700
+
+    msm: audio: initialize the structure before sending to user space
+    
+    If uninitialzied structure is passed from kernel to user space, it
+    may contain contain sensitive information that will be leaked.
+    
+    Change-Id: I4926185703b84c38710dd7d1271d3684aab5361e
+    Signed-off-by: Fred Oh <fred@codeaurora.org>
+
+commit e56f81a6fe3039dfa46d55de79c54d619e619ead
+Author: Shalabh Jain <shalabhj@codeaurora.org>
+Date:   Mon Nov 4 11:57:16 2013 -0800
+
+    msm: mdss: Avoid variable overloading
+    
+    A particular variable is overloaded and used in 2 different
+    contexts. This causes overwriting of original value and leads
+    to incorrect error handling. This code adds a new variable to
+    avoid such condition.
+    
+    Change-Id: Ibd040e6b4ce95759cc0011304940365c70e6c12a
+    Signed-off-by: Shalabh Jain <shalabhj@codeaurora.org>
+
+commit 9cdd2d14911888f27b449de2154574160e33a24a
+Author: Satish Kodishala <skodisha@codeaurora.org>
+Date:   Mon Nov 25 13:02:10 2013 +0530
+
+    radio: tavarua: Added NULL checks for input arguments.
+    
+    Added NULL checks for input arguments.
+    
+    Change-Id: Ie39c2b3254c95925723735423c81b99da59ee6ad
+    CRs-fixed: 548405
+    Signed-off-by: Satish Kodishala <skodisha@codeaurora.org>
+
+commit a62aced9b161c88afb04ed60dce974146664e887
+Author: Ajay Singh Parmar <aparmar@codeaurora.org>
+Date:   Wed Oct 2 13:11:54 2013 -0700
+
+    msm: mdss: hdmi: Security check for EDID 3D data parsing
+    
+    While parsing EDID (Extended display identification data) received
+    from TV for 3D data and other, proper buffer overflow check is done
+    to avoid data overflow or overwrite.
+    Also, replace snprintf with scnprintf for better memory copy results.
+    
+    CRs-Fixed: 542823
+    Change-Id: I2603beea6eb88a92b013a1a45d960a4c3ba6c09b
+    Signed-off-by: Ajay Singh Parmar <aparmar@codeaurora.org>
+
+commit 79722d36030ba4bf46c17696f510ceb64db514de
+Author: Jordan Crouse <jcrouse@codeaurora.org>
+Date:   Wed Oct 30 10:42:58 2013 -0600
+
+    msm: kgsl: Protect against a potential overflow in kgsl_sg_alloc
+    
+    Avoid allocating a scatterlist so large that it overflows the size
+    passed to the memory allocators.
+    
+    CRs-fixed: 564448
+    Change-Id: Ic0dedbad2ab421ddec8f3be38d61c9bdf9ae5bd4
+    Signed-off-by: Jordan Crouse <jcrouse@codeaurora.org>
+
+commit 112bfffc2d6a475f5820c915f659755efe11eed2
+Author: Katish Paran <kparan@codeaurora.org>
+Date:   Fri Jan 31 12:00:37 2014 +0530
+
+    diag: dci: Index DCI client table by client id
+    
+    Diag driver maintains a table of all DCI clients. This table
+    is currently indexed by the PID of the clients. Make changes
+    to index the table base on an unique client id.
+    
+    Change-Id: I57bfab9eae1381882b8eb6270d7ac212e0aaf271
+    CRs-fixed: 590721
+    Signed-off-by: Katish Paran <kparan@codeaurora.org>
+
+commit 8ce1c7574a2bf06f61cbc800869bc4c9087ed8ba
+Merge: 0ee6b5f 5cef975
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Thu Feb 6 03:13:35 2014 -0800
+
+    Merge "diag: Fix for diag debugfs buffer overflow"
+
+commit 0ee6b5f12f5bbd10afd740bed8729085625cbcde
+Merge: 7a22456 7cd9cc4
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Wed Feb 5 06:24:31 2014 -0800
+
+    Merge "msm: bam_dmux: Fix race condition during SSR"
+
+commit 183d2cf34607f2a18e83f8cc4700e182e2489033
+Author: Asish Bhattacharya <asishb@codeaurora.org>
+Date:   Wed Oct 30 19:04:00 2013 +0530
+
+    msm: qdsp6v2: Deleting kernel driver from arch/arm/mach-msm
+    
+    Drivers are registering under misc driver but exists under arch/arm/mach
+    
+    Change-Id: I6210ed2ffbc38608914fb765b8e50ac6d97950ff
+    CRs-Fixed: 554492
+    Signed-off-by: Asish Bhattacharya <asishb@codeaurora.org>
+    Signed-off-by: Mohammad Johny Shaik <mjshai@codeaurora.org>
+
+commit 7a224568570b81605894451ca5df74893dcc684a
+Merge: 96e091c eebfb8e
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Wed Feb 5 04:21:20 2014 -0800
+
+    Merge "slim_ngd: Add NULL pointer check apart from error check"
+
+commit 96e091c36f6c897533d4ee3219dc02681f1da4d0
+Merge: ca2c033 4a06419
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Wed Feb 5 02:02:48 2014 -0800
+
+    Merge "qdsp5: memset stack buffer allocation."
+
+commit 7cd9cc40f7d59b842b02576805a84cbac6e2f51f
+Author: Arun Kumar Neelakantam <aneela@codeaurora.org>
+Date:   Fri Oct 11 14:34:02 2013 +0530
+
+    msm: bam_dmux: Fix race condition during SSR
+    
+    BAM DMUX drivers set the global flags to identify the SSR during
+    SUBSYS_BEFORE_SHUTDOWN notification, but the flags change is not reflected
+    in some code paths like msm_bam_dmux_write().
+    
+    Add the SSR flag check and SRCU locking to complete all pending bam dmux
+    writes before returning the control in SSR call back function for
+    SUBSYS_BEFORE_SHUTDOWN notification.
+    
+    CRs-Fixed: 584805
+    Change-Id: I26647b485977943f272c44f7450ed6c4a4aa62f3
+    Signed-off-by: Arun Kumar Neelakantam <aneela@codeaurora.org>
+
+commit 712d352f69a725012c1df24b3622abe7b369f131
+Author: Asish Bhattacharya <asishb@codeaurora.org>
+Date:   Tue Nov 5 15:09:23 2013 -0800
+
+    msm: qdsp6v2: Deleting kernel driver from arch/arm/mach-msm/qdsp6v2
+    
+    Driver is registering under misc driver but exists under arch/arm/mach
+    
+    Change-Id: I0930d3f56767569edefa1af3c7d45a724a219ce3
+    CRs-Fixed: 548017
+    Signed-off-by: Mohammad Johny Shaik <mjshai@codeaurora.org>
+
+commit ca2c03398a1550a52107b5abdebcb89a9db2c0af
+Merge: cefeb18 bbba3a2
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Feb 4 07:11:05 2014 -0800
+
+    Merge "mm: fix calculation of dirtyable memory"
+
+commit cefeb18f5feb8c67f3e02f556efef1d1c9b57eaf
+Merge: 137ff18 7a7c23a
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Feb 4 07:10:57 2014 -0800
+
+    Merge "ondemand: add sysfs entry for down_diff_multi_core"
+
+commit 137ff18907d9c1a21326797684b11e1b01fe5de8
+Merge: 0187324 8c34654
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Feb 4 05:03:06 2014 -0800
+
+    Merge "msm: ipa: Fix the format string vulnerability."
+
+commit 01873247be93e39099d612886e09ea53193d9613
+Merge: 62f83f3 f85410e
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Feb 4 05:03:05 2014 -0800
+
+    Merge "msm: ipa: add null check and initialize the variable"
+
+commit 62f83f3213df95880a7008aa191bc823dcfa5275
+Merge: 1f63b8e a93007c
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Feb 4 05:02:59 2014 -0800
+
+    Merge "msm: buspm: Correct size type in buspm_xfer_req"
+
+commit 1f63b8e6919de16cef3235422af59627f9c664d4
+Merge: 1823805 38cb0ca
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Feb 4 05:02:57 2014 -0800
+
+    Merge "mdss: Fix null point dereference in mdss_mdp_pp_init"
+
+commit 1823805898b8b69cd2db3d410a8ad07c0c6325d0
+Merge: 62a5861 5381d00
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Feb 4 05:02:55 2014 -0800
+
+    Merge "msm: mdss: Sanitize read of panel properties"
+
+commit 62a586113c22997014545c63ebd3df7c6a3fdda7
+Merge: 9c73c92 a98b5a8
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Feb 4 05:02:53 2014 -0800
+
+    Merge "msm: mdss: Prevent NULL pointer access"
+
+commit 9c73c922968d1e388b232f66b41b6a4cfd8c5753
+Merge: b4919d9 479e0ae
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Feb 4 05:02:52 2014 -0800
+
+    Merge "ASoC: msm: DTS parameter validation"
+
+commit b4919d9402372c2474757e47f93a8100845335b5
+Merge: f561111 ef6c716
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Feb 4 05:02:50 2014 -0800
+
+    Merge "msm: camera_v2: cci: check for NULL pointer"
+
+commit f561111426fcda3b873fd8f8c34dfbb53e167030
+Merge: 43fb3d42 8b87d4c
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Feb 4 05:02:44 2014 -0800
+
+    Merge "radio: iris: Avoid NULL pointer dereferencing"
+
+commit 43fb3d4272be27cd8868c85ace543c08a015ce53
+Merge: 1be5c01 bae7b90
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Feb 4 05:02:42 2014 -0800
+
+    Merge "radio: iris: Avoid inconsistent free"
+
+commit 1be5c01334960c3d669c9d74ae1bbb96d125773b
+Merge: d6bd151 74af8be
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Feb 4 05:02:40 2014 -0800
+
+    Merge "radio: iris: Avoid memory leak and NULL pointer dereferencing"
+
+commit d6bd151d62d0ad7fc1964e52a05687c447767202
+Merge: 838c0d6 97dfbd2
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Feb 4 05:02:38 2014 -0800
+
+    Merge "ASoc: msm: qdsp6v2: Fix for NULL check"
+
+commit bbba3a28163f4c7ad6c6876b8618f5740295ad8e
+Author: Sonny Rao <sonnyrao@chromium.org>
+Date:   Thu Dec 20 15:05:07 2012 -0800
+
+    mm: fix calculation of dirtyable memory
+    
+    The system uses global_dirtyable_memory() to calculate number of
+    dirtyable pages/pages that can be allocated to the page cache.  A bug
+    causes an underflow thus making the page count look like a big unsigned
+    number.  This in turn confuses the dirty writeback throttling to
+    aggressively write back pages as they become dirty (usually 1 page at a
+    time).  This generally only affects systems with highmem because the
+    underflowed count gets subtracted from the global count of dirtyable
+    memory.
+    
+    The problem was introduced with v3.2-4896-gab8fabd
+    
+    Fix is to ensure we don't get an underflowed total of either highmem or
+    global dirtyable memory.
+    
+    Change-Id: Ib0c4a8f99870edc5ded863b88a472f2836c690d2
+    Signed-off-by: Sonny Rao <sonnyrao@chromium.org>
+    Signed-off-by: Puneet Kumar <puneetster@chromium.org>
+    Acked-by: Johannes Weiner <hannes@cmpxchg.org>
+    Tested-by: Damien Wyart <damien.wyart@free.fr>
+    Cc: <stable@vger.kernel.org>
+    Signed-off-by: Andrew Morton <akpm@linux-foundation.org>
+    Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>
+    Git-commit: c8b74c2f6604923de91f8aa6539f8bb934736754
+    Git-repo: git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+    Signed-off-by: Laura Abbott <lauraa@codeaurora.org>
+
+commit 7a7c23a3a845612315f93c2c782663ebd801d871
+Author: Krishna Vanka <kvanka@codeaurora.org>
+Date:   Wed Dec 11 14:56:15 2013 +0530
+
+    ondemand: add sysfs entry for down_diff_multi_core
+    
+    This change adds sysfs entry for the ondemand governor's attribute
+    down_differential_multi_core. This is required to be able to program
+    this knob to attain better perf/power for use cases like camcorder.
+    
+    CRs-fixed: 561456
+    Change-Id: Ib7c1223215c6b714c286c231ed37f3abfae741c6
+    Signed-off-by: Krishna Vanka <kvanka@codeaurora.org>
+
+commit 5cef9752135347eacb62c57c04a88a9cb13c14ab
+Author: Sreelakshmi Gownipalli <sgownipa@codeaurora.org>
+Date:   Tue Jan 14 16:54:46 2014 -0800
+
+    diag: Fix for diag debugfs buffer overflow
+    
+    Diag debugfs buffer has potential buffer overflow scenario which can cause
+    memory corruption. Added safeguard to prevent this.
+    
+    Crs-fixed: 585147
+    Change-Id: Ie1f099bb4bb626adff99ae225966aef70c1bc15e
+    Signed-off-by: Sreelakshmi Gownipalli <sgownipa@codeaurora.org>
+
+commit d963e05c1e16194d819fbbde0d62ff8e9fe328bc
+Author: Mohammad Johny Shaik <mjshai@codeaurora.org>
+Date:   Wed Dec 4 15:56:41 2013 +0530
+
+    msm: qdsp6v2: memset stack buffer allocation.
+    
+    This is needed to avoid garbage data in uninitialized variables.
+    
+    Change-Id: Id5921e369055d846b990380be6355ad464518a10
+    CRs-Fixed: 554301
+    Signed-off-by: Yeleswarapu, Nagaradhesh <nagaradh@codeaurora.org>
+
+commit 97dfbd25892aff510925fad93aa4bcd4cf810d84
+Author: Mingming Yin <mingming@codeaurora.org>
+Date:   Fri Dec 6 17:22:30 2013 -0800
+
+    ASoc: msm: qdsp6v2: Fix for NULL check
+    
+    - Required check added for NULL pointer
+    
+    CRs-fixed: 583939
+    Change-Id: I8b079c42ef06af9a817dc830c5f2d3c785232aa7
+    Signed-off-by: Mingming Yin <mingming@codeaurora.org>
+
+commit 838c0d6b32de6adae80da61c55e4ffb2cb08d45e
+Merge: 6e961d3 4c66eaf
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Mon Feb 3 09:31:17 2014 -0800
+
+    Merge "mmc: core : fix arbitrary read/write to user space"
+
+commit 6e961d3497793ae663c8710ae64120f92b987eb6
+Merge: e19bf17 1c771c4
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Mon Feb 3 00:57:06 2014 -0800
+
+    Merge "Bluetooth: Replace sprintf with snprintf"
+
+commit e19bf17ff9904ac880039826143dd02c580a461d
+Merge: ee167ba 2da07ac
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Sun Feb 2 23:17:36 2014 -0800
+
+    Merge "radio: iris: Add NULL pointer check"
+
+commit 2da07ac1bd01aa04bb2adfc4fa61a3cadcaf69f6
+Author: Ayaz Ahmad <aahmad@codeaurora.org>
+Date:   Wed Oct 9 16:20:40 2013 +0530
+
+    radio: iris: Add NULL pointer check
+    
+    Dereferencing a NULL pointer may cause kernel crash,
+    Check for NULL pointer before dereferencing
+    
+    Change-Id: Ic3368d619d23c76702d95e0f69e41394e423a296
+    CRs-Fixed: 548404
+    Signed-off-by: Ayaz Ahmad <aahmad@codeaurora.org>
+
+commit 1c771c43bdee19e1c70c192a0c6d5176d6f84e84
+Author: Juffin Alex Varghese <jalex@codeaurora.org>
+Date:   Mon Dec 16 10:28:00 2013 +0530
+
+    Bluetooth: Replace sprintf with snprintf
+    
+    Change will replace sprintf with snprintf, since sprintf is a
+    banned function.
+    
+    CRs-FIxed: 548220
+    Change-Id: I32f5ab1f3707e5bbe43c31a7ad4611b67557b267
+    Signed-off-by: Juffin Alex Varghese <jalex@codeaurora.org>
+
+commit 74af8be5c407d17380cde3e3c110973d7dedc07a
+Author: Ayaz Ahmad <aahmad@codeaurora.org>
+Date:   Fri Sep 20 14:47:34 2013 +0530
+
+    radio: iris: Avoid memory leak and NULL pointer dereferencing
+    
+     - Avoid memory leak by freeing allocated memory
+     - Do not derefer NULL pointer
+    
+    CRs-Fixed: 537955
+    Signed-off-by: Ayaz Ahmad <aahmad@codeaurora.org>
+    Change-Id: I7624d73e5c25233e9d03c67e4204c611b9a8fff6
+
+commit 8b87d4ced9b63df959cc365aa27b329733f9103d
+Author: Ayaz Ahmad <aahmad@codeaurora.org>
+Date:   Fri Sep 20 12:08:48 2013 +0530
+
+    radio: iris: Avoid NULL pointer dereferencing
+    
+    Before dereferencing a pointer check for NULL
+    pointer.
+    
+    CRs-Fixed: 537890
+    Signed-off-by: Ayaz Ahmad <aahmad@codeaurora.org>
+    Change-Id: If010b89fd4f5930d944c9e327c51de4b40f33c3c
+
+commit bae7b9042e9bd80405a92ebfa82623f997fa5699
+Author: Ayaz Ahmad <aahmad@codeaurora.org>
+Date:   Fri Sep 20 15:06:08 2013 +0530
+
+    radio: iris: Avoid inconsistent free
+    
+    There is a chance to of memory leak if we exit
+    from function early. Ensure to use free before
+    exiting from function.
+    
+    Change-Id: I17dbecffc5713d95c66ecec0bffb5ed3c8660fe8
+    CRs-Fixed: 540334
+    Signed-off-by: Ayaz Ahmad <aahmad@codeaurora.org>
+
+commit ee167ba57381a4b376f2da4249f7efa0c19698c2
+Merge: 8047b5b 8f22fd9
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Jan 31 23:40:38 2014 -0800
+
+    Merge "qseecom: Fix error handling path in receive_req()"
+
+commit 8047b5b2bbd5310af6a2dc8d3c0057354244cf6c
+Merge: f00aadf be84206
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Jan 31 23:40:37 2014 -0800
+
+    Merge "diag: dci: Safeguard to prevent Integer Underflow and Memory Leak"
+
+commit f00aadfdc3cd8367c4916f350ef36accc0edc2c0
+Merge: 1b8e221 e360008
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Jan 31 23:40:36 2014 -0800
+
+    Merge "diag: dci: Preventing unitialized stack memcpy operation"
+
+commit 1b8e22101c33c3c5f55839ad9514719a8796f115
+Merge: b4a7233 0b86111
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Jan 31 13:31:41 2014 -0800
+
+    Merge "wcnss: Fix Integer overflow"
+
+commit b4a7233a5c9ce26fd129c4e30150e41232a28590
+Merge: 41d55f2 e6cddd8
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Jan 31 07:00:08 2014 -0800
+
+    Merge "defconfig: remove support for /dev/mem and /dev/kmem on perf builds"
+
+commit 41d55f264cc647c3df206acb855b7ce87282a5b5
+Merge: 6db7a85 67240b0
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Jan 31 04:46:40 2014 -0800
+
+    Merge "radio: iris: Prevent probable overflow"
+
+commit 6db7a85613274f106cfcd6ae6929eebcf47ee2f7
+Merge: dc3817ee 2bf66ab
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Jan 31 04:46:38 2014 -0800
+
+    Merge "radio: iris: Use kernel API to copy data from user space"
+
+commit dc3817ee16d7b66ac84b19173b3a6d678b802872
+Merge: caccd18 6c5a037
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Jan 31 04:46:37 2014 -0800
+
+    Merge "radio: iris: Removed reference to user provided pointer."
+
+commit caccd184bf704857915e7dd4f04b8a2081b096b4
+Merge: b155db3 3e64d11
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Jan 31 04:46:34 2014 -0800
+
+    Merge "radio: iris: Allow task to be interrupted"
+
+commit b155db3bdcf4c44a215e3ecbe7a5fcd0dce77678
+Merge: d2f4bd1 09a77be
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Jan 31 04:46:33 2014 -0800
+
+    Merge "msm: rpm-smd: use data type correctly for a variable"
+
+commit d2f4bd18de2d16b4ff78b89030cd2b2af89a1617
+Merge: b145a91 8a1d37f
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Jan 31 04:46:31 2014 -0800
+
+    Merge "mmc: card: fix arbitrary write via read handler in mmc_block_test"
+
+commit 8c34654529c1217edfceba347abaea6fc50436cc
+Author: Skylar Chang <chiaweic@codeaurora.org>
+Date:   Thu Nov 21 14:04:23 2013 -0800
+
+    msm: ipa: Fix the format string vulnerability.
+    
+    Fix the format string vulnerability by explicitly
+    specifiying string argument instead of just using user-specified
+    string. This will prevent read/write anywhere from the stack.
+    
+    CRs-Fixed: 561941
+    
+    Change-Id: Idffa9a04d0f6712205ac7701c7cd7cf4a246cde0
+    Signed-off-by: Skylar Chang <chiaweic@codeaurora.org>
+    Signed-off-by: Gopal G Goberu <ggober@codeaurora.org>
+
+commit e6cddd86b7df330516db4893ff60dde41f8cda3f
+Author: Sarang Joshi <spjoshi@codeaurora.org>
+Date:   Fri Oct 25 12:40:07 2013 -0700
+
+    defconfig: remove support for /dev/mem and /dev/kmem on perf builds
+    
+    Keeping /dev/mem and /dev/kmem exposed to userspace allows userspace
+    to peek/poke to these areas and is a security risk. Remove support for
+    /dev/mem and /dev/kmem on perf builds.
+    
+    Change-Id: Icaed922d80e271670fb0571852833d452771376c
+    CRs-Fixed: 530719
+    Signed-off-by: Sarang Joshi <spjoshi@codeaurora.org>
+
+commit eebfb8e3a9a057d79c86e3a37a5d582e3e2159ff
+Author: Kiran Gunda <kgunda@codeaurora.org>
+Date:   Mon Oct 21 17:00:15 2013 +0530
+
+    slim_ngd: Add NULL pointer check apart from error check
+    
+    Check against NULL pointer after allocating
+    the memory for msm_slim_ctrl structure pointer
+    dynamically to avoid unexpected crashes.
+    
+    Earlier this pointer is checked only for error
+    codes. In this patch NULL pointer check is also
+    added.
+    
+    CRs-Fixed: 562417
+    Change-Id: I5cd731144f88b89ee412d19f110b3df6426186f7
+    Signed-off-by: Kiran Gunda <kgunda@codeaurora.org>
+
+commit be84206d3c8bf9995b7c77cd2b439815a129627c
+Author: Katish Paran <kparan@codeaurora.org>
+Date:   Tue Dec 17 13:36:15 2013 +0530
+
+    diag: dci: Safeguard to prevent Integer Underflow and Memory Leak
+    
+    At certain point in diag driver there can be integer underflow
+    thus can lead to memory leak. Added a safeguard for that.
+    
+    Change-Id: I2a0304f5b9888fe12ca9ef5fbaa9a68ee4ab9c15
+    Crs-fixed: 556860
+    Signed-off-by: Katish Paran <kparan@codeaurora.org>
+
+commit 8f22fd9686b40e3e428f565e646d3a28fa6d61d8
+Author: AnilKumar Chimata <anilc@codeaurora.org>
+Date:   Tue Jul 23 23:03:26 2013 +0530
+
+    qseecom: Fix error handling path in receive_req()
+    
+    This patch fixes the error handling path in receive_req() function
+    called from userspace. Issue seen if user is calling the receive_req
+    function without calling the listener registration. qseecom_find_svc()
+    should return NULL if there are no services found.
+    
+    Change-Id: Id51d8f48d7266b5acbc845f7b9ac0068d16b1ede
+    CRs-fixed: 496927
+    Signed-off-by: AnilKumar Chimata <anilc@codeaurora.org>
+
+commit f85410ea778becab21bdb547db68974336e1820f
+Author: Skylar Chang <chiaweic@codeaurora.org>
+Date:   Wed Nov 13 17:00:50 2013 -0800
+
+    msm: ipa: add null check and initialize the variable
+    
+    Add null check to avoid crash and initialize the
+    variable before using it.
+    
+    CRs-Fixed: 556930 556936 556939
+    
+    Change-Id: If6431ae5075dd96bfadce4c002786874aa5b6740
+    Signed-off-by: Skylar Chang <chiaweic@codeaurora.org>
+
+commit 0b86111f7da0bd444b0601871e4de5569e10c5b0
+Author: Arif Hussain <arifhussain@codeaurora.org>
+Date:   Fri Nov 1 19:09:11 2013 -0700
+
+    wcnss: Fix Integer overflow
+    
+    Integer overflow can lead to buffer
+    overflow in wcnss_wlan_write
+    
+    Change-Id: I9e6f3439e1c8509bdb9c8c14b9aefe5611de8b03
+    CRs-Fixed: 547969
+    Signed-off-by: Arif Hussain <arifhussain@codeaurora.org>
+
+commit b145a91b2d430b65e4c8cca3307730b917e265e5
+Merge: c5a0600 6ccb7db
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Thu Jan 30 04:30:29 2014 -0800
+
+    Merge "msm: vidc: Fix a race condition in masking interrupts"
+
+commit c5a060048a7ff9ca44bac967c71fc0cc988bf96e
+Merge: db66433 da663c9
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Thu Jan 30 01:34:12 2014 -0800
+
+    Merge "msm: sps: Add integer wrap check for debugfs buffer"
+
+commit db66433157a682c77752bfdb467a76feea5443e8
+Merge: e35c7f6 7314f3c
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Thu Jan 30 01:34:11 2014 -0800
+
+    Merge "msm: camera: Fix possible NULL pointer dereference."
+
+commit 6ccb7db885ca297b46d7ff523bd8fcf770bbb232
+Author: Vinay Kalia <vkalia@codeaurora.org>
+Date:   Thu Jan 2 17:17:28 2014 -0800
+
+    msm: vidc: Fix a race condition in masking interrupts
+    
+    Fix a race condition when interaction with firmware happens
+    in following sequence:
+    
+    1. Firmware writes IDLE message into the message queue.
+    2. Driver writes a new command into command queue.
+    3. Firmware reads this command and starts processing it.
+    4. Driver checks if command queue is empty and finds it empty.
+    5. Firmware writes the response (of the command sent in 2) in
+       message queue. Firmware also writes another IDLE message and
+       sets the idle register.
+    6. Driver check if the IDLE register is set and finds it set.
+    7. Driver masks the interrupts. Since interrupts are masked,
+       driver misses the response written by firmware in 5.
+    
+    This race condition is fixed by checking if message queue is
+    empty or not between 6 and 7.
+    
+    Change-Id: I9b73ff35f6d408a021f3b03080210da315679d0e
+    Signed-off-by: Vinay Kalia <vkalia@codeaurora.org>
+
+commit a93007cadc62e4a56f4aefedc51ca48c36341e5c
+Author: Sana Venkat Raju <c_vsana@codeaurora.org>
+Date:   Sun Dec 15 11:51:17 2013 +0530
+
+    msm: buspm: Correct size type in buspm_xfer_req
+    
+    Variable size inside buspm_xfer_req
+    can be negative and thus would be a
+    large positive number resulting in arbitary
+    Kernel read. This patch corrects this value.
+    
+    CRs-Fixed: 563529
+    Change-Id: I877db6960530d6c7d1486da9cfdc15a43e57e152
+    Signed-off-by: Sana Venkat Raju <c_vsana@codeaurora.org>
+
+commit e35c7f6524694148b75d58b69c5f0ed401a68d8e
+Merge: aa28f42 878688a
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Wed Jan 29 00:49:11 2014 -0800
+
+    Merge "mmc: core : fix arbitrary read/write to user space"
+
+commit aa28f42c8a64120dda27b7723665301f4169585b
+Merge: dfc3296 d593136
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Wed Jan 29 00:49:04 2014 -0800
+
+    Merge "msm: acpuclock-cortex: Fix off by one error for large frequency tables"
+
+commit dfc3296e16b9adac316b2f02b5a5ebbb1f9796eb
+Merge: 60a5efa 9dccf16
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Jan 28 15:19:35 2014 -0800
+
+    Merge "msm: kgsl: Restrict the maximum memory entries for bulk cache sync"
+
+commit 60a5efa3d4273545e03cd62153d7a7bde6676ede
+Merge: f85eff9 9d93f13
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Jan 28 15:19:33 2014 -0800
+
+    Merge "msm: kgsl: Add check for NULL value from dev_get_drvdata"
+
+commit f85eff9e4cce96fa22a020c48dda2108581002dd
+Merge: f5d25bd 7258b55
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Jan 28 15:19:31 2014 -0800
+
+    Merge "msm: kgsl: Verify the user address before reading a perfcounter group"
+
+commit f5d25bd7789423967bc5bd422ab084d967c10119
+Merge: 8a39b15 6812f0b
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Jan 28 11:26:08 2014 -0800
+
+    Merge "ARM: dts: msm: correct ssd2080m panel commands and timing"
+
+commit 8a39b1589a3c7e82389e5a56e0315d36f3d2d8c6
+Merge: a0e3f03 2a11854
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Jan 28 11:26:07 2014 -0800
+
+    Merge "msm: mdss: Replace enums with strings in panel dtsi"
+
+commit a0e3f03061352303ebdbca9adb6b9dc0ed19717c
+Merge: 0b8f65e 9214193
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Jan 28 11:26:06 2014 -0800
+
+    Merge "Revert "ARM: dts: msm: fix ssd2080m pixel corruption issue""
+
+commit 9dccf16d13a3469f19d4ffc7a606b4d62636700e
+Author: Jordan Crouse <jcrouse@codeaurora.org>
+Date:   Mon Nov 25 16:24:39 2013 -0700
+
+    msm: kgsl: Restrict the maximum memory entries for bulk cache sync
+    
+    Restrict the maximum number of memory entries that can be specified
+    to a single bulk cache sync call to PAGE_SIZE / sizeof(unsigned int)
+    so that the allocation can always fit within one page.
+    
+    CRs-fixed: 578062
+    Change-Id: Ic0dedbad07e1986cd6ccc5b260ffef82b5adb6d3
+    Signed-off-by: Jordan Crouse <jcrouse@codeaurora.org>
+
+commit 7258b55c8f1e377cf256349a062a156a8333690c
+Author: Jordan Crouse <jcrouse@codeaurora.org>
+Date:   Mon Oct 21 09:14:55 2013 -0600
+
+    msm: kgsl: Verify the user address before reading a perfcounter group
+    
+    In adreno_perfcounter_read_group some user input verification is
+    occuring on a user pointer before copy_from_user is called
+    resulting in a possible segmentation fault if called with improper
+    input data.
+    
+    CRs-fixed: 553314
+    Change-Id: Ic0dedbad4c5e4b2610368d51ff591d1f716712f4
+    Signed-off-by: Jordan Crouse <jcrouse@codeaurora.org>
+
+commit 9d93f1342817796c0cefd713499de4bb305e146d
+Author: Jordan Crouse <jcrouse@codeaurora.org>
+Date:   Tue Nov 26 14:21:08 2013 -0700
+
+    msm: kgsl: Add check for NULL value from dev_get_drvdata
+    
+    Check to see if dev_get_drvdata returns NULL and handle it.
+    
+    CRs-Fixed: 552580
+    Change-Id: Ic0dedbad426dbbe15896608213067ee7337f3b34
+    Signed-off-by: Jordan Crouse <jcrouse@codeaurora.org>
+
+commit 6812f0b5f8aa91e3c4ed064fdbcd4ad8ef76e829
+Author: Ray Zhang <rayzhang@codeaurora.org>
+Date:   Mon Dec 2 16:20:39 2013 +0800
+
+    ARM: dts: msm: correct ssd2080m panel commands and timing
+    
+    Update ssd2080m panel on/off commands,vertical/horizontal
+    porch values and timing according to vendor's suggestion
+    
+    CRs-fixed: 569455
+    Change-Id: Ia60bb8caf55ebbff96751f6b9706f9ef682428c7
+    Signed-off-by: Ray Zhang <rayzhang@codeaurora.org>
+    Signed-off-by: Vishnuvardhan Prodduturi <vproddut@codeaurora.org>
+
+commit 2a1185440c682380c80086eee88f4903a5866b07
+Author: Casey Piper <cpiper@codeaurora.org>
+Date:   Fri Oct 25 11:50:52 2013 -0700
+
+    msm: mdss: Replace enums with strings in panel dtsi
+    
+    To make dtsi files more readable, enums or u32
+    values that referred to strings in the panel
+    dtsi files are replaced by strings.
+    
+    CRs-Fixed: 511801
+    Change-Id: I516358c7027fe9ed05541b56c2de47280a23baab
+    Signed-off-by: Casey Piper <cpiper@codeaurora.org>
+    Signed-off-by: Vishnuvardhan Prodduturi <vproddut@codeaurora.org>
+
+commit 9214193490f0d2f1176b28e78c037e44e8e15f78
+Author: Vishnuvardhan Prodduturi <vproddut@codeaurora.org>
+Date:   Tue Jan 28 20:26:32 2014 +0530
+
+    Revert "ARM: dts: msm: fix ssd2080m pixel corruption issue"
+    
+    This reverts commit 8f783c0162c13ce43269277dccdcf26330db9139.
+    
+    Change-Id: I0bf72b6bd1a79ef6d3dc65e06d50c67a95455526
+    Signed-off-by: Vishnuvardhan Prodduturi <vproddut@codeaurora.org>
+
+commit 0b8f65e4ed54410411b91b1055a2c61ea1705516
+Merge: 61ac146 13095a0
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Jan 28 01:52:01 2014 -0800
+
+    Merge "diag: Safeguard for bound checks and integer underflow"
+
+commit 61ac146af31fe1de24a1f4b4eb53a312a832a961
+Merge: 527bfa2 7aa7f3a
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Mon Jan 27 22:21:45 2014 -0800
+
+    Merge "msm: vidc: add sleep of 100us before clock disable"
+
+commit d593136e2547d2f26f16be3b694bf4d7632b633c
+Author: Patrick Daly <pdaly@codeaurora.org>
+Date:   Tue Oct 15 18:52:43 2013 -0700
+
+    msm: acpuclock-cortex: Fix off by one error for large frequency tables
+    
+    If a frequency table was greater than a certain size, data will be written
+    past the end of an array. Fix the loop conditions to prevent this.
+    
+    CRs-fixed: 561651
+    Change-Id: If7bafcf79c044877f4a29c2437c139d23aa1fb32
+    Signed-off-by: Patrick Daly <pdaly@codeaurora.org>
+
+commit 5381d00de1f689074ba216bbf672bc64bfb58a83
+Author: Mayank Chopra <makchopra@codeaurora.org>
+Date:   Thu Nov 14 17:44:04 2013 +0530
+
+    msm: mdss: Sanitize read of panel properties
+    
+    Check panel property's values properly before operating on
+    them.
+    
+    CRs-Fixed: 562887
+    Change-Id: I26ce51e8b3a8e9328e7b6370b9c56d67fcdd1901
+    Signed-off-by: Mayank Chopra <makchopra@codeaurora.org>
+
+commit 38cb0ca169044f7dd1519c5b93f23d30990a1e74
+Author: Krishna Chaitanya Parimi <cparimi@codeaurora.org>
+Date:   Sat Oct 26 00:48:16 2013 +0530
+
+    mdss: Fix null point dereference in mdss_mdp_pp_init
+    
+    Fixed null point dereference in case of memory allocation
+    failure in mdss_mdp_pp_init.
+    
+    Change-Id: I3593a583da355915b731ac30b1f38aaa010eba85
+    Signed-off-by: Krishna Chaitanya Parimi<cparimi@codeaurora.org>
+
+commit a98b5a80f93e2b6f1f9f995a7d5c2377e8c3dfdb
+Author: Shalabh Jain <shalabhj@codeaurora.org>
+Date:   Mon Nov 4 17:17:09 2013 -0800
+
+    msm: mdss: Prevent NULL pointer access
+    
+    Current code has scope of dereferencing an already
+    NULL variable. Implementing proper error handling
+    for NULL variable.
+    
+    Change-Id: Iba46e676ce42adc286f907e72300786d3391a9a9
+    Signed-off-by: Shalabh Jain <shalabhj@codeaurora.org>
+
+commit 878688a5569571836814b9066a548072506ad893
+Author: Raviv Shvili <rshvili@codeaurora.org>
+Date:   Tue Oct 1 17:18:29 2013 +0300
+
+    mmc: core : fix arbitrary read/write to user space
+    
+    In the MMC card debug_fs the read and write handlers use the strlcat
+    and sscanf, without checking the pointer given.
+    Since the pointer is not checked it is possible to write
+    everywhere (ring 0 or 3).
+    In order to fix it, an access_ok function is being used to verify
+    the buffer's pointer supplied by user is valid.
+    
+    CRs-fixed: 545716
+    Change-Id: Ia710b6af5a95974fc930ca902e8ff18afa4e17ba
+    Signed-off-by: Raviv Shvili <rshvili@codeaurora.org>
+
+commit 4c66eafe752f59c3de6a10016c2f909b8154727d
+Author: Raviv Shvili <rshvili@codeaurora.org>
+Date:   Thu Oct 31 17:38:19 2013 +0200
+
+    mmc: core : fix arbitrary read/write to user space
+    
+    In the MMC card debug_fs the read and write handlers use the strlcat
+    and sscanf, without checking the pointer given.
+    Since the pointer is not checked it is possible to write
+    everywhere (ring 0 or 3).
+    In order to fix it, an access_ok function is being used to verify
+    the buffer's pointer supplied by user is valid.
+    
+    CRs-fixed: 545716
+    
+    Change-Id: I13ca736337fefe29ff9b0df6a318e7d92240f8b2
+    Signed-off-by: Raviv Shvili <rshvili@codeaurora.org>
+
+commit 527bfa20a2a70a27964a2a2216617b5fc83eded8
+Merge: ad5e49e 5216460
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Mon Jan 27 04:30:03 2014 -0800
+
+    Merge "qpnp-rtc: clear alarm register when rtc irq is disabled"
+
+commit ad5e49e8d051ad3b1857423fd89a1134659495b8
+Merge: 4c27962 626b492
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Mon Jan 27 04:30:02 2014 -0800
+
+    Merge "rtc: alarm: update power_on alarm setting logic"
+
+commit 4c2796263e5d0ca2a96df7d4833b2ee4c2182568
+Merge: e98ea84 4f75838
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Mon Jan 27 04:29:57 2014 -0800
+
+    Merge "ARM: dts: msm: Update USB HSPHY init parameters for skug"
+
+commit e3600085e3654e28a6b955ecc6a3c6d4c54880bd
+Author: Katish Paran <kparan@codeaurora.org>
+Date:   Tue Jan 21 13:49:25 2014 +0530
+
+    diag: dci: Preventing unitialized stack memcpy operation
+    
+    At certain point in diag driver there can be memcpy operation
+    for the unintialized stack. Due to uninitilization of memory
+    user can obatin valuable information on accessing this stack
+    in userspace. This patch fixes that issue.
+    
+    Change-Id: I4bfcf156300132dc426dcadce325e0c76c1d0357
+    CRs-fixed: 565808
+    Signed-off-by: Katish Paran <kparan@codeaurora.org>
+
+commit 7aa7f3a61a638ad7bcd396e77e11ae741d29ba56
+Author: Vikash Garodia <vgarodia@codeaurora.org>
+Date:   Tue Jan 7 18:20:03 2014 +0530
+
+    msm: vidc: add sleep of 100us before clock disable
+    
+    ARM9 execute following sequence when venus is idle
+    1. Disable ARM9 watchdog
+    2. Set bit 30 of A_VENUS_CPU_CS_SCIACMDARG0 register
+       to indicate venus is idle
+    3. Write HFI_MSG_SYS_IDLE to message queue
+    4. Raise interrupt to host
+    5. ARM9 execute wait for interrupt instruction to go
+       into low power state. This will internally drain the
+       ARM9 write buffer which can generate bus transaction.
+    6. ARM9 in idle
+    
+    Host clock gate venus based on following sequence
+    1. Host receive HFI_MSG_SYS_IDLE from the msg queue
+    2. Host check both cmd / msg queue are empty by
+       comparing the queue read/write pointers.
+    3. Host check bit 30 of A_VENUS_CPU_CS_SCIACMDARG0
+       register to confirm it indicate idle
+    4. Host clock gate whole venus
+    
+    As the host clock gate venus in step 4, ARM9 is still
+    in step 5&6. The sleep will ensure that step 5 and 6
+    are completed before host clock gates venus.
+    
+    CRs-Fixed: 589417
+    CRs-Fixed: 595251
+    Change-Id: Idf1f788718adea2dacceca97afa4ba4fe4562ddd
+    Signed-off-by: Vikash Garodia <vgarodia@codeaurora.org>
+
+commit 479e0aee4963c23bbcb40c35c82e7de8d8188aaf
+Author: Gopikrishnaiah Anandan <agopik@codeaurora.org>
+Date:   Wed Nov 13 17:49:21 2013 -0800
+
+    ASoC: msm: DTS parameter validation
+    
+    Validate the modelIdLength before proceeding and copying
+    the user data.
+    
+    Change-Id: I659d83376cc893340851d6889019a82d169b2134
+    Signed-off-by: Gopikrishnaiah Anandan <agopik@codeaurora.org>
+    Signed-off-by: Anish Kumar <kanish@codeaurora.org>
+
+commit 521646008c146d9211ef1d452c3201c69e341678
+Author: Xiaocheng Li <lix@codeaurora.org>
+Date:   Fri Nov 8 17:31:56 2013 +0800
+
+    qpnp-rtc: clear alarm register when rtc irq is disabled
+    
+    The rtc alarm register should be cleared when the rtc irq is
+    disabled
+    
+    Change-Id: I97a8bf989ff610093240a6b308a297702da6cb89
+    Signed-off-by: Xiaocheng Li <lix@codeaurora.org>
+
+commit 626b49294b7309d209b37380abb88ccd8f695b7f
+Author: Xiaocheng Li <lix@codeaurora.org>
+Date:   Tue Oct 22 18:25:58 2013 +0800
+
+    rtc: alarm: update power_on alarm setting logic
+    
+    The previous power_on alarm value should be checked to avoid
+    cancelling the alarm by mistake.
+    
+    Change-Id: I4de12265416fab41a9c591d09961c9fef0d25917
+    Signed-off-by: Xiaocheng Li <lix@codeaurora.org>
+
+commit 4f7583819bc98a6019fa51f6a6473b40ac5b71f9
+Author: guopingy <guopingy@codeaurora.org>
+Date:   Tue Jan 14 17:50:41 2014 +0800
+
+    ARM: dts: msm: Update USB HSPHY init parameters for skug
+    
+    These are PHY electrical setting related parameters that are
+    required to pass high speed electrical compliance tests.
+    
+    Change-Id: I1abbf67dd2e7270ea058b93d4975c86cbfcc8775
+    Signed-off-by: Guoping Yu <guopingy@codeaurora.org>
+
+commit 4a5198c21fb52092ffad67f13885b7d131cdffaa
+Author: anish kumar <kanish@codeaurora.org>
+Date:   Sat Dec 14 21:01:08 2013 -0800
+
+    msm: reap unused audio files
+    
+    Removing this file as it is not used in this branch.
+    
+    Change-Id: Ibff0dbeca0cdae5447d3fd8857ffad296edfdd55
+    Signed-off-by: anish kumar <kanish@codeaurora.org>
+
+commit ef6c7161bbf45c87ea0320bb3686b300faba350a
+Author: Georgi Hristov <ghristov@codeaurora.org>
+Date:   Wed Oct 9 10:37:38 2013 +0300
+
+    msm: camera_v2: cci: check for NULL pointer
+    
+    in function "msm_cci_subdev_g_chip_ident"
+    check for NULL pointer and return error
+    instead of assert
+    
+    Change-Id: Ia27751c4d6f3d5ead1749e396ffa5c2773f1582b
+    Signed-off-by: Georgi Hristov <ghristov@codeaurora.org>
+
+commit da663c961f87aa68838518b8e4b13248b2487ac7
+Author: Dipen Parmar <dipenp@codeaurora.org>
+Date:   Wed Dec 11 17:22:44 2013 +0530
+
+    msm: sps: Add integer wrap check for debugfs buffer
+    
+    When converting debugfs buffer size to kilobytes value
+    there is a possible integer overflow and it may result
+    into negative value.
+    
+    Fix the issue by adding integer wrap check for buffer
+    size just before conversion.
+    
+    CRs-fixed: 564177
+    Change-Id: If4615561ea6a1c58e8be8c1b72f7881c068d8520
+    Signed-off-by: Dipen Parmar <dipenp@codeaurora.org>
+
+commit 13095a0f6090274ef6fd15e00494f768cc42671d
+Author: Katish Paran <kparan@codeaurora.org>
+Date:   Tue Dec 24 17:46:29 2013 +0530
+
+    diag: Safeguard for bound checks and integer underflow
+    
+    At certain point in diag driver there can be integer underflow
+    and thus can lead to memory leak. Bound checks are placed to
+    ensure correct behavior of condition statements.
+    
+    Change-Id: I47e02f764c2c7412db6f90fd42192fee32a761d3
+    CRs-fixed: 549470
+    Signed-off-by: Katish Paran <kparan@codeaurora.org>
+
+commit e98ea845e1590049b8a99129f3ca3c4a9e5ecf44
+Merge: ce4be88 621b6a2
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Thu Jan 23 06:28:19 2014 -0800
+
+    Merge "msm: qdsp6v2: NULL pointer check on userspace data argument in kernel"
+
+commit ce4be8802ca7c220d45db5b69d40196bb5356e13
+Merge: 993702ed 39efd6d
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Wed Jan 22 02:48:26 2014 -0800
+
+    Merge "ARM: dts: msm: enable LP11 configuration for ssd2080m"
+
+commit 39efd6db84e172123c71df1d17b781de5097a04f
+Author: Ray Zhang <rayz@codeaurora.org>
+Date:   Tue Jan 21 10:17:25 2014 +0800
+
+    ARM: dts: msm: enable LP11 configuration for ssd2080m
+    
+    ssd2080m requires panel reset after LP11 timing starts,
+    add extra 50ms delay after reset to ensure the safety.
+    
+    Change-Id: I5278443a5555dcc59498a52984c9523134b35d50
+    Signed-off-by: Ray Zhang <rayz@codeaurora.org>
+
+commit 7314f3cb80c99dc9de66eb5aa1d50f672783f9d9
+Author: Petar Sivenov <psiven@codeaurora.org>
+Date:   Thu Oct 31 17:37:33 2013 +0200
+
+    msm: camera: Fix possible NULL pointer dereference.
+    
+    The result of memory allocation in msm_isp_get_buf is not checked for
+    success before use. This can lead to NULL pointer dereference.
+    
+    Change-Id: I83cb56bbcd5e7526bf57a6de1077a30f9a2b5349
+    Signed-off-by: Petar Sivenov <psiven@codeaurora.org>
+    Signed-off-by: Gopal G Goberu <ggober@codeaurora.org>
+
+commit 993702edbaa6d5519eaf343a3180b0d9166cb737
+Merge: d723e89 8f783c0
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Thu Jan 16 07:13:23 2014 -0800
+
+    Merge "ARM: dts: msm: fix ssd2080m pixel corruption issue"
+
+commit 8f783c0162c13ce43269277dccdcf26330db9139
+Author: Ray Zhang <rayz@codeaurora.org>
+Date:   Fri Dec 20 16:00:16 2013 +0800
+
+    ARM: dts: msm: fix ssd2080m pixel corruption issue
+    
+    There's pixel corruption issue on the right corner of
+    ssd2080m with current panel setting, vendor suggests to
+    update porch and gate setting to address this issue.
+    
+    CRs-fixed: 591272
+    Change-Id: Ibff3312b4dd89867ca2b4b882d62315b39dd4ec7
+    Signed-off-by: Ray Zhang <rayz@codeaurora.org>
+
+commit d723e89d2a32c3d362165da759cfcb55036d20ba
+Merge: a539370 d81a051
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Jan 14 01:05:18 2014 -0800
+
+    Merge "diag: dci: Safeguard to prevent integer overflow"
+
+commit a5393701f9d74e4feae6d46e0470216b57610d33
+Merge: ad03c7e 0fd797c
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Jan 10 04:44:08 2014 -0800
+
+    Merge "msm: ipc: Possible memory corruption due to Sign Conversion"
+
+commit ad03c7e876677c3bf9ef621b0199ecc13783e04b
+Merge: 6914792 9e5a97d
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Jan 10 01:26:37 2014 -0800
+
+    Merge "kernel: alarm: setup the RTC immediately for poweroff alarm"
+
+commit 9e5a97d4d7d9fc3b171804e9666c343e71f52768
+Author: Figo Wang <figow@codeaurora.org>
+Date:   Wed Sep 25 12:59:35 2013 +0800
+
+    kernel: alarm: setup the RTC immediately for poweroff alarm
+    
+    Currently we setup the RTC for poweroff alarm when the system
+    performs shutdown. But if the phone is shut down unexpectedly
+    before that, the poweroff alarm can't work. So we can do that
+    immediately.
+    
+    CR-fixed: 532743
+    Change-Id: Ib26a56fba8cd64efe94f2f07ee232482228429dc
+    Signed-off-by: Figo Wang <figow@codeaurora.org>
+
+commit 3e64d111a1fd3008e5855a49b66c93a70a20dc3c
+Author: Ayaz Ahmad <aahmad@codeaurora.org>
+Date:   Fri Nov 8 17:38:45 2013 +0530
+
+    radio: iris: Allow task to be interrupted
+    
+    Not allowing task to be interrupted can cause
+    delay in response to upper layer. Allow task pending
+    to be interrupted when corresponding command's status
+    is received.
+    
+    Change-Id: I1ff383327b646042b1f1e66547eda6900186710b
+    CRs-Fixed: 569318
+    Signed-off-by: Ayaz Ahmad <aahmad@codeaurora.org>
+
+commit 09a77be7f2810c441eadc81152ff76c0c98cad0b
+Author: Anil kumar mamidala <amami@codeaurora.org>
+Date:   Mon Nov 25 12:13:48 2013 +0530
+
+    msm: rpm-smd: use data type correctly for a variable
+    
+    Change variable data type from signed int to unsigned int.
+    
+    CRs-fixed: 556055
+    Change-Id: I6bb363b31d4fab26d84f89e775101c6051fe9e10
+    Signed-off-by: Anil kumar mamidala <amami@codeaurora.org>
+
+commit 621b6a21148b4aa9a36c2ae9a7f40bcbb2137af2
+Author: Mohammad Johny Shaik <mjshai@codeaurora.org>
+Date:   Wed Nov 13 15:45:34 2013 -0800
+
+    msm: qdsp6v2: NULL pointer check on userspace data argument in kernel
+    
+    The null pointer check is required to ensure that userspace data
+    in kernalspace is not null.
+    
+    Change-Id: I9e522c393ae643626a4bae03731a73f5d6db6458
+    CRs-Fixed: 563752
+    Signed-off-by: Mohammad Johny Shaik <mjshai@codeaurora.org>
+
+commit d81a05117975b6b45d7e5fcaa3b8b3b06f381432
+Author: Katish Paran <kparan@codeaurora.org>
+Date:   Tue Dec 24 14:11:41 2013 +0530
+
+    diag: dci: Safeguard to prevent integer overflow
+    
+    At certain point in diag driver there can be integer overflow
+    thus can lead to memory leak. Added a safegaurd for it.
+    
+    Change-Id: I9347405d8f1f95ed42fe0abf35cbf4c362281bdf
+    CRs-fixed: 565160
+    Signed-off-by: Katish Paran <kparan@codeaurora.org>
+
+commit 2bf66ab793eec5eb78c815ad51b02f63d478156f
+Author: Ayaz Ahmad <aahmad@codeaurora.org>
+Date:   Tue Oct 8 15:56:04 2013 +0530
+
+    radio: iris: Use kernel API to copy data from user space
+    
+    Use copy_from_user kernel api to copy any data from user space
+    to kernel space.
+    
+    Change-Id: Ia3b7bb0f98180bd8792c1c18e930cb5609b8dc82
+    CRs-Fixed: 540320
+    Signed-off-by: Ayaz Ahmad <aahmad@codeaurora.org>
+
+commit 67240b0761892e5d5afe3c0ab880ef7ed0f64372
+Author: Ayaz Ahmad <aahmad@codeaurora.org>
+Date:   Thu Oct 31 19:08:05 2013 +0530
+
+    radio: iris: Prevent probable overflow
+    
+    casting a unsigned int into an integer, integer to
+    unsigned int may cause buffer overflow.
+    
+    Change-Id: I54be4d4c5470616a59a772c587fe6d5f32575c32
+    CRs-Fixed: 539008
+    Signed-off-by: Ayaz Ahmad <aahmad@codeaurora.org>
+
+commit 6c5a037cbd7154517fc5d492446cea519cc2fd84
+Author: Satish Kodishala <skodisha@codeaurora.org>
+Date:   Tue Dec 17 11:27:59 2013 +0530
+
+    radio: iris: Removed reference to user provided pointer.
+    
+    Removed reference to user provided capability structure
+    pointer.
+    
+    Change-Id: If372f0069a90549ab0f53759ea85e171a1265e21
+    CRs-fixed: 539042
+    Signed-off-by: Satish Kodishala <skodisha@codeaurora.org>
+
+commit 6914792b02e2bb801c949aa07128f417f54db506
+Merge: 7004b6a 59397f7
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Thu Jan 9 04:44:17 2014 -0800
+
+    Merge "qseecom: Validate the incoming length from user space"
+
+commit 7004b6a1b2cd403c97b8e8b1475e7d92281924a9
+Merge: 4e82801 1d2bf6e
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Thu Jan 9 04:44:10 2014 -0800
+
+    Merge "platform: qpnp-power-on: Set boot reason in procfs"
+
+commit 1d2bf6e8f27cae3a32d35945cbaab224f1874271
+Author: Maria Yu <aiquny@codeaurora.org>
+Date:   Thu Dec 19 13:55:52 2013 +0800
+
+    platform: qpnp-power-on: Set boot reason in procfs
+    
+    Assigns a value to the boot_reason procfs property in
+    qpnp-power-on. This property can be read via
+    /proc/sys/kernel/boot_reason. The value for this property
+    will reflect lowest bit set in the PON_REASON1 PMIC register.
+    For example, if bit 0 is set in the register, then
+    boot_reason will have a value of 1. If no bits are set
+    in the register, then boot_reason will have a value of 0.
+    
+    For existing PMIC chips, the following mapping applies
+    for the value of boot_reason:
+    
+    0 -> unknown
+    1 -> hard reset
+    2 -> sudden momentary power loss (SMPL)
+    3 -> real time clock (RTC)
+    4 -> DC charger inserted
+    5 -> USB charger inserted
+    6 -> PON1 pin toggled (for secondary PMICs)
+    7 -> CBLPWR_N pin toggled (for external power supply)
+    8 -> KPDPWR_N pin toggled (power key pressed)
+    
+    Change-Id: Icf2be66165fd01d3063282fcbfb2b115480e7b5c
+    Signed-off-by: Maria Yu <aiquny@codeaurora.org>
+
+commit 0fd797cb10391649dc2be414daa9d35de3b133fe
+Author: Zaheerulla Meer <zmeer@codeaurora.org>
+Date:   Fri Oct 11 18:18:35 2013 +0530
+
+    msm: ipc: Possible memory corruption due to Sign Conversion
+    
+    msm_ipc_router_skb_to_buf() takes an unsigned argument and assigns the
+    same to a signed local variable. This might cause issues when the value
+    of the argument is too high.
+    
+    Change the datatype of the local variable to unsigned.
+    
+    CRs-Fixed: 550606
+    Change-Id: I257a095681dd82fba05367fd6faf25820e95c719
+    Signed-off-by: Zaheerulla Meer <zmeer@codeaurora.org>
+
+commit 8a1d37fd2b21a4da19ae8db1c4cc1c8d1fee189b
+Author: Lee Susman <lsusman@codeaurora.org>
+Date:   Mon Nov 11 08:53:40 2013 +0200
+
+    mmc: card: fix arbitrary write via read handler in mmc_block_test
+    
+    In mmc_block_test, the debug_fs based read function handlers write to an
+    arbitrary buffer which is given by any user. We add an access_ok check
+    to verify that the address pointed by *buffer is not in kernel space.
+    Only if the buffer is valid, do we continue the read handler.
+    
+    Change-Id: I35fe9bb70df8de92cb4d3b15c851aa9131a0e8d9
+    Signed-off-by: Lee Susman <lsusman@codeaurora.org>
+
+commit 59397f763995104f24bba0bf2c89c229624eda80
+Author: Hariprasad Dhalinarasimha <hnamgund@codeaurora.org>
+Date:   Thu Oct 3 16:43:39 2013 -0700
+
+    qseecom: Validate the incoming length from user space
+    
+    Check if there is no integer overflow before using req_len and
+    resp_len (received from user space). If an overflow is detected
+    then exit the operation.
+    
+    Change-Id: I0459a6992bb3b280db42be63a275c55fa6105b1c
+    Signed-off-by: Hariprasad Dhalinarasimha <hnamgund@codeaurora.org>
+
+commit 4e8280174608f91516a3d952e99d48878f2f9364
+Merge: b9c9124 2204c48
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Jan 7 05:53:48 2014 -0800
+
+    Merge "jbd2: Fix use after free after error in jbd2_journal_dirty_metadata()"
+
+commit b9c9124d32712d9ba7e99296440e4462e63e8b81
+Merge: 95d4eb8 6a57304
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Jan 7 05:53:46 2014 -0800
+
+    Merge "ext4: make sure the journal sb is written in ext4_clear_journal_err()"
+
+commit 95d4eb80cb69e1d1b0c8033aa33748befaa34609
+Merge: dbc8157 de12884
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Jan 7 05:53:44 2014 -0800
+
+    Merge "ext4: fix memory leak in xattr"
+
+commit dbc81578b8489a3ae2770e253a65cfedc2c48bb1
+Merge: 9f20136 23489d5
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Jan 7 03:35:21 2014 -0800
+
+    Merge "qseecom: Fix issues with qssecom_remove/exit APIs"
+
+commit 9f20136386e4700b07334715ffc89e757f75ee33
+Merge: 9aa0370 a1dcbfb
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Jan 7 03:35:20 2014 -0800
+
+    Merge "msm: Remove old unused sdio related code"
+
+commit 9aa0370b42e8c4d5b6a7ba6d782d4ea4f873dabf
+Merge: d93991c 935d939
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Jan 7 03:35:18 2014 -0800
+
+    Merge "qseecom:  Validate inputs from user space"
+
+commit de12884dbec61f6c73e057596bceed338e6d1e0f
+Author: Dave Jones <davej@redhat.com>
+Date:   Fri Oct 11 00:05:35 2013 +0000
+
+    ext4: fix memory leak in xattr
+    
+    If we take the 2nd retry path in ext4_expand_extra_isize_ea, we
+    potentionally return from the function without having freed these
+    allocations.  If we don't do the return, we over-write the previous
+    allocation pointers, so we leak either way.
+    
+    Spotted with Coverity.
+    
+    [ Fixed by tytso to set is and bs to NULL after freeing these
+      pointers, in case in the retry loop we later end up triggering an
+      error causing a jump to cleanup, at which point we could have a double
+      free bug. -- Ted ]
+    
+    Change-Id: I49b8ca41a6c6d44b563eb23306870258a3affd3b
+    Signed-off-by: Dave Jones <davej@fedoraproject.org>
+    Signed-off-by: "Theodore Ts'o" <tytso@mit.edu>
+    Reviewed-by: Eric Sandeen <sandeen@redhat.com>
+    Cc: stable@vger.kernel.org
+    Git-commit: 6e4ea8e33b2057b85d75175dd89b93f5e26de3bc
+    Git-repo: git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+    Signed-off-by: Osvaldo Banuelos <osvaldob@codeaurora.org>
+
+commit 2204c4852b8a4dfea85b791cc937460212de7dd7
+Author: Jan Kara <jack@suse.cz>
+Date:   Mon Aug 12 13:53:28 2013 +0000
+
+    jbd2: Fix use after free after error in jbd2_journal_dirty_metadata()
+    
+    When jbd2_journal_dirty_metadata() returns error,
+    __ext4_handle_dirty_metadata() stops the handle. However callers of this
+    function do not count with that fact and still happily used now freed
+    handle. This use after free can result in various issues but very likely
+    we oops soon.
+    
+    The motivation of adding __ext4_journal_stop() into
+    __ext4_handle_dirty_metadata() in commit 9ea7a0df seems to be only to
+    improve error reporting. So replace __ext4_journal_stop() with
+    ext4_journal_abort_handle() which was there before that commit and add
+    WARN_ON_ONCE() to dump stack to provide useful information.
+    
+    Change-Id: Ibfd59e399f4a11abc378a237e10b3741bef2a15e
+    Reported-by: Sage Weil <sage@inktank.com>
+    Signed-off-by: Jan Kara <jack@suse.cz>
+    Signed-off-by: "Theodore Ts'o" <tytso@mit.edu>
+    Cc: stable@vger.kernel.org	# 3.2+
+    Git-commit: 91aa11fae1cf8c2fd67be0609692ea9741cdcc43
+    Git-repo: git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+    Signed-off-by: Osvaldo Banuelos <osvaldob@codeaurora.org>
+
+commit 6a57304e423c79b41b75e2bce4a9d9e16967232f
+Author: Theodore Ts'o <tytso@mit.edu>
+Date:   Sun Aug 5 23:04:57 2012 +0000
+
+    ext4: make sure the journal sb is written in ext4_clear_journal_err()
+    
+    After we transfer set the EXT4_ERROR_FS bit in the file system
+    superblock, it's not enough to call jbd2_journal_clear_err() to clear
+    the error indication from journal superblock --- we need to call
+    jbd2_journal_update_sb_errno() as well.  Otherwise, when the root file
+    system is mounted read-only, the journal is replayed, and the error
+    indicator is transferred to the superblock --- but the s_errno field
+    in the jbd2 superblock is left set (since although we cleared it in
+    memory, we never flushed it out to disk).
+    
+    This can end up confusing e2fsck.  We should make e2fsck more robust
+    in this case, but the kernel shouldn't be leaving things in this
+    confused state, either.
+    
+    Change-Id: I7a7cd58880209fbd54f4ded5f2b62de492cae9e0
+    Signed-off-by: "Theodore Ts'o" <tytso@mit.edu>
+    Cc: stable@kernel.org
+    Git-commit: d796c52ef0b71a988364f6109aeb63d79c5b116b
+    Git-repo: git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+    Signed-off-by: Osvaldo Banuelos <osvaldob@codeaurora.org>
+
+commit a1dcbfb42faeaeef5d82b7c11ced45b33082a3d9
+Author: Venkat Gopalakrishnan <venkatg@codeaurora.org>
+Date:   Thu Jan 2 17:32:43 2014 -0800
+
+    msm: Remove old unused sdio related code
+    
+    Cleanup mach-msm by removing unused sdio related code.
+    
+    Change-Id: I485deb7d6499771294b494f5542ba510c10255cb
+    Signed-off-by: Venkat Gopalakrishnan <venkatg@codeaurora.org>
+
+commit 935d939aba987ac30388d5e35f446a552187c3fc
+Author: Mona Hossain <mhossain@codeaurora.org>
+Date:   Tue Oct 1 14:08:20 2013 -0700
+
+    qseecom:  Validate inputs from user space
+    
+    Validate send_cmd, send_modfd_cmd and send_mdfd_resp
+    input parameters: cmd and response pointers and buffer
+    lengths and offsets  issued to modify data.
+    
+    Change-Id: I381836d08aaa48357486fbdc6a122eb5b42bfa0b
+    Signed-off-by: Mona Hossain <mhossain@codeaurora.org>
+
+commit 23489d5f82e2a297361eb5b0751dfa12495fcaeb
+Author: AnilKumar Chimata <anilc@codeaurora.org>
+Date:   Fri Oct 4 18:53:42 2013 +0530
+
+    qseecom: Fix issues with qssecom_remove/exit APIs
+    
+    Clean-up the qseecom_remove() function by removing the null pointer
+    dereference. Change the logic by removing the unnecessary code and
+    also modified the qseecom_exit() function with proper calls.
+    
+    Change-Id: Ibcca1b3c2c37024661505de2550e202b507703aa
+    Signed-off-by: AnilKumar Chimata <anilc@codeaurora.org>
+    Signed-off-by: Gopal G Goberu <ggober@codeaurora.org>
+
+commit d93991cecbcc5a546fc552aa4d1cbf1297efdf1f
+Merge: 7299400 b81f8235
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Sun Jan 5 23:40:20 2014 -0800
+
+    Merge "csdio: Remove the driver"
+
+commit 7299400935b6812689dae4b3c78730a52b5b6131
+Merge: ac56d4b 7f18e42
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Jan 3 22:36:48 2014 -0800
+
+    Merge "gpu: ion: add locking to traversal of volatile rb tree"
+
+commit ac56d4b9bb15d0adceb96fb6498e8796735ef599
+Merge: a9f581d 4bae0233
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Jan 3 22:36:47 2014 -0800
+
+    Merge "gpu: ion: fix locking issues in debug code"
+
+commit a9f581ddc8207e4c728aa7ca141860d903c29782
+Merge: 9116289 26ad753
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Jan 3 22:36:47 2014 -0800
+
+    Merge "gpu: ion: use a list instead of a tree for heap debug memory map"
+
+commit 15f0338b8ba92c62118120fb2d2f3a33b95cb6d7
+Author: Rajakumar Govindaram <rajakuma@codeaurora.org>
+Date:   Mon Aug 26 16:42:28 2013 -0700
+
+    msm: camera2: cpp: Release vb2 buffer in cpp driver on error
+    
+    When duplicate output is enabled, there is potential issue if
+    error is encountered in second output buffer. Under error condition
+    related to second output buffer is hit, the first output buffer is
+    not released properly.
+    
+    Change-Id: I56f375a5783c54c450f5673818d15b393f469ef1
+    Signed-off-by: Rajakumar Govindaram <rajakuma@codeaurora.org>
+
+commit 87d24ee144ebe155ee58e0b9bac2952b5c295909
+Author: Hariram Purushothaman <hpurus@codeaurora.org>
+Date:   Mon Dec 9 11:23:13 2013 -0800
+
+    msm: camera: Cleanup msm generic buf queue handling
+    
+    Clean-up the msm camera generic buff queue when all
+    client closes the handle and also provide init-deinit
+    ioctl for cpp to open-close the buff mngr handle.
+    
+    Change-Id: Ie484174e0ffaee02e85c9c9cda8ac26103aaddd0
+    CRs-Fixed: 582261
+    Signed-off-by: Hariram Purushothaman <hpurus@codeaurora.org>
+
+commit 7f18e42b29e36b8d14e2b3f77f6d445826cbf26b
+Author: Mitchel Humpherys <mitchelh@codeaurora.org>
+Date:   Mon Nov 18 16:47:00 2013 -0800
+
+    gpu: ion: add locking to traversal of volatile rb tree
+    
+    In ion_debug_heap_show we're iterating over an rb tree (dev->clients)
+    that could change while we're iterating. Fix this by taking the lock
+    that is used to control access to this tree.
+    
+    CRs-Fixed: 571918
+    Change-Id: I6832e1e98e2d2a69fc653451d3752d43ec3ef269
+    Signed-off-by: Mitchel Humpherys <mitchelh@codeaurora.org>
+
+commit 4bae02333dc3add8497ad5a48fa931ca62d52cfe
+Author: Mitchel Humpherys <mitchelh@codeaurora.org>
+Date:   Mon Nov 4 15:23:05 2013 -0800
+
+    gpu: ion: fix locking issues in debug code
+    
+    There are a few places in Ion where we are iterating over volatile rb
+    trees without proper locking. In some places the proper locking cannot
+    be added since it would require us to take locks in a different order
+    than they are taken in other places in Ion. Fix this by re-working some
+    of the debug code so that we can take locks in an allowed order.
+    
+    One side-effect of the re-work is that the memory maps will now show
+    every client that has a handle to a particular region of memory, rather
+    than just showing the first one that we encounter. This will allow for
+    more accurate accounting and will give better insight as to who is
+    actually using the memory.
+    
+    CRs-Fixed: 571918
+    Change-Id: Ia43e4dbc412cd480c828173f8c20b5095d87d858
+    Signed-off-by: Mitchel Humpherys <mitchelh@codeaurora.org>
+
+commit 26ad75384e5312dda5763fb120fa1e92144e852d
+Author: Mitchel Humpherys <mitchelh@codeaurora.org>
+Date:   Fri Nov 15 22:56:04 2013 -0800
+
+    gpu: ion: use a list instead of a tree for heap debug memory map
+    
+    Currently we use an rb tree to store information about the memory map
+    which gets passed to the heap print_debug functions. The reason for
+    using a tree instead of a simple list is to maintain sortedness as we
+    build the memory map. However, it can be necessary to store multiple
+    entries for the same address in the memory map since there can be
+    multiple clients with handles to the same buffer. This information is
+    interesting and useful but we currently can't store and display it since
+    the rb tree requires that the key used for sorting (the physical address
+    in this case) be unique. Fix this by replacing the rb tree with a linked
+    list. In order to maintain sorted output of the print_debug functions,
+    sort the list by physical address after fully building the list.
+    
+    This also has the positive side-effect of simplifying the code and
+    making future print_debug methods less error-prone.
+    
+    CRs-Fixed: 571918
+    Change-Id: I5b129fd809fb53c66042eab10d096238a34c2b20
+    Signed-off-by: Mitchel Humpherys <mitchelh@codeaurora.org>
+
+commit 911628963b4f367397b9feae8ccb92d4856405ee
+Merge: 3245c9a d3b847a
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Thu Jan 2 07:55:48 2014 -0800
+
+    Merge "msm: mdss: Enable hardware reset line based on panel setting"
+
+commit b81f823568bc7ccf0f906ae26f6bf2a38384a2be
+Author: Hamad Kadmany <hkadmany@codeaurora.org>
+Date:   Tue Dec 17 21:34:36 2013 +0200
+
+    csdio: Remove the driver
+    
+    The driver is a legacy driver that is not used any longer
+    and its implementation is neither correct nor compiles.
+    
+    Change-Id: I9862c0f93ccad6079a616f6997987d4e187a137c
+    Signed-off-by: Hamad Kadmany <hkadmany@codeaurora.org>
+
+commit d3b847ab2cecdff7d126448abf40b43dc3035dae
+Author: Dhaval Patel <pdhaval@codeaurora.org>
+Date:   Wed Nov 6 16:37:31 2013 -0800
+
+    msm: mdss: Enable hardware reset line based on panel setting
+    
+    DSI clock and data lanes should be in LP11 state before
+    enabling the hardware reset line for some panels. These
+    panels might need initialization delay after DSI host and slave
+    in LP11 state to reach functional. No data traffic
+    is allowed for such panels during this master delay.
+    
+    CRs-fixed: 572179
+    Change-Id: I6a004f55a117f1adfbfbfce85231ef45997e4e6f
+    Signed-off-by: Dhaval Patel <pdhaval@codeaurora.org>
+
+commit 3245c9a5e50b12ee458dbf890781f41804af5fc3
+Merge: b2bd8e5 60e6aee
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Sun Dec 29 22:33:46 2013 -0800
+
+    Merge "hwmon: qpnp-adc: add battery thermistor mapping table for skug"
+
+commit 60e6aee7054fc0f66b6032c68bb592759be7eb33
+Author: Wu Fenglin <fenglinw@codeaurora.org>
+Date:   Tue Dec 17 11:33:33 2013 +0800
+
+    hwmon: qpnp-adc: add battery thermistor mapping table for skug
+    
+    Since the new values of parameters including Rs1=30.3K,
+    Rs2=12.8K, Tcold=-15DegC and Thot=55DegC are used for
+    skug device, we add a new table accordingly.
+    
+    CRs-fixed: 590617
+    Change-Id: If9e6b1103abd0fb40e98dabb0c75c5c9deb5cacc
+    Signed-off-by: Wu Fenglin <fenglinw@codeaurora.org>
+
+commit b2bd8e516fc792d989fe919b17da31dea54c01e2
+Merge: de3a5f94 902c499
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Wed Dec 25 00:48:49 2013 -0800
+
+    Merge "ARM: dts: msm: Add a new device tree for msm8926 SKUG PVT"
+
+commit 902c4999a626812eb163ad1d2cd9f89d906bd071
+Author: Maria Yu <aiquny@codeaurora.org>
+Date:   Mon Dec 16 19:18:18 2013 +0800
+
+    ARM: dts: msm: Add a new device tree for msm8926 SKUG PVT
+    
+    Split a common file of msm8926 QRD SKUG device tree file
+    to easily add new device tree for msm8926 SKUG PVT.
+    
+    Change-Id: I3a67da4a6a94ed40bd73a952fb2debf858dd98bf
+    Signed-off-by: Maria Yu <aiquny@codeaurora.org>
+
+commit de3a5f948c3a88f83421f4366c6d5b1575031235
+Merge: 0be4044 215f35c
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Mon Dec 23 00:14:26 2013 -0800
+
+    Merge "msm: mdss: enable vsync event during continuous splash"
+
+commit 215f35ca5bbaab4886602a09a956329dbdc3fd43
+Author: Ray Zhang <rayzhang@codeaurora.org>
+Date:   Fri Dec 6 15:56:51 2013 +0800
+
+    msm: mdss: enable vsync event during continuous splash
+    
+    Currently when continuous splash screen is enabled the vsync
+    event reports are delayed until first frame update. This blocks
+    boot animation. To fix this issue, after user space enables
+    vsync through vsync_ctrl, mdp driver will start sending vsync
+    events.
+    
+    CRs-fixed: 567649
+    Change-Id: Ifb35e3479805e595d950ab7c38c26de201aa2d16
+    Signed-off-by: Ray Zhang <rayzhang@codeaurora.org>
+
+commit 0be4044badd739a442ee97ad6375efad6e2a1595
+Merge: 19cc3b5 b346c71
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Thu Dec 19 03:26:26 2013 -0800
+
+    Merge "hsic_sysmon_test: Add check for userspace buffer size count"
+
+commit 19cc3b56f08ff8bfd6d7ffa71dc6e2083ad2c37d
+Merge: f2751fe 219b528
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Thu Dec 19 01:28:28 2013 -0800
+
+    Merge "ehci-msm2: Add boundary check in echi driver"
+
+commit b346c71b483fb62f09f28f7f47efdbda4dab13d0
+Author: Saket Saurabh <ssaurabh@codeaurora.org>
+Date:   Mon Sep 30 12:53:11 2013 +0530
+
+    hsic_sysmon_test: Add check for userspace buffer size count
+    
+    hsic_sysmon_test local buffer size limit is 4096 bytes. If user space
+    tries to write data with size greater than 4096 bytes, memory corruption
+    would happen. Hence, add check for userspace buffer size count before
+    writing data from userspace buffer to hsic_sysmon_test local buffer.
+    
+    CRs-Fixed: 547489
+    Change-Id: I25de15b2abea44ff4cecac827d86b2da8a57c40e
+    Signed-off-by: Saket Saurabh <ssaurabh@codeaurora.org>
+
+commit 219b528687b6c5cf33b5baed390f3711e73a8421
+Author: Saket Saurabh <ssaurabh@codeaurora.org>
+Date:   Mon Sep 30 17:33:57 2013 +0530
+
+    ehci-msm2: Add boundary check in echi driver
+    
+    This change adds boundary check before copying data from userspace
+    buffer to ehci local buffer.
+    The third parameter passed to copy_from_user() should be minimum of the two
+    values between userpsace buffer size count and (local_buffer size - 1). The
+    last one byte in local_buffer should be reserved for null terminator.
+    
+    CRs-Fixed: 547910
+    Change-Id: I1cbf34068166ba26bdab58914f75b777ffff4bdf
+    Signed-off-by: Saket Saurabh <ssaurabh@codeaurora.org>
+
+commit f2751feaa90855d47f268fab36b6e93c50596305
+Merge: 12623a2 a425532
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Dec 17 07:08:39 2013 -0800
+
+    Merge "msm: vidc: Mask interrupts from venus after receiving IDLE message."
+
+commit 12623a249a1556b91e2efc6b0a24429f8c981c8c
+Merge: d1e86bd bc22541
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Dec 17 07:08:38 2013 -0800
+
+    Merge "msm: vidc: Handle SYS_IDLE interrupt concurrency"

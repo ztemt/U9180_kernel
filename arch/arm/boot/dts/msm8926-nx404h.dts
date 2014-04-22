@@ -1,0 +1,27 @@
+/* Copyright (c) 2013, The Linux Foundation. All rights reserved.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 and
+ * only version 2 as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ */
+
+
+/dts-v1/;
+/include/ "msm8926.dtsi"
+/include/ "zte/nx404h/dsi-sharp-panel-r69431-720p-video.dtsi"
+/include/ "zte/nx404h/dsi-sharp-panel-r69431-720p-cmd.dtsi"
+/include/ "zte/nx404h/dsi-tianma-panel-otm1282a-720p-video.dtsi"
+/include/ "zte/nx404h/dsi-tianma-panel-otm1282a-720p-cmd.dtsi"
+/include/ "zte/nx404h/dsi-sharp-panel-r69431-1080p-video.dtsi"
+/include/ "zte/nx404h/msm8226-720p-mtp.dtsi"
+
+/ {
+	model = "Qualcomm MSM 8926 MTP";
+	compatible = "qcom,msm8926-mtp", "qcom,msm8926", "qcom,mtp";
+	qcom,board-id = <8 0>;
+};
